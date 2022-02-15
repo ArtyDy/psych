@@ -13,11 +13,12 @@ win = psychopy.visual.Window(
 )
 
 listecondition = ["GV","GF","DV","DF"]
-
+pos=[]
 for i in range (4):
     print(listecondition[i])
     k=listecondition[i]
     mouse=event.Mouse(win=win, visible=True, newPos=[0,0])
+    poss=[]
     if k == "GF":
         #affichage croix rouge
         ligne=visual.Line(win, start=[-40,0], end=[40,0], lineColor="red", lineWidth=5)
@@ -94,8 +95,8 @@ for i in range (4):
             etoile4=visual.Line(win, start=[330,10], end=[350,-10], lineColor=[1,1,1], lineWidth=5)
             etoile4.draw()
             win.flip()
-            pos.append([event.Mouse.getPos()[0],event.Mouse.getPos()[1]])
-
+            poss.append([mouse.getPos()[0], mouse.getPos()[1]])
+        pos.append(poss)
     if k == "DV":
         #affichage croix rouge
         ligne=visual.Line(win, start=[-40,0], end=[40,0], lineColor="red", lineWidth=5)
@@ -171,7 +172,8 @@ for i in range (4):
             etoile4=visual.Line(win, start=[330,10], end=[350,-10], lineColor=[1,1,1], lineWidth=5)
             etoile4.draw()
             win.flip()
-        
+            poss.append([mouse.getPos()[0],mouse.getPos()[1]])
+        pos.append(poss)
 
     if k == "DF":
         #affichage croix rouge
@@ -248,7 +250,8 @@ for i in range (4):
             etoile4=visual.Line(win, start=[-330,10], end=[-350,-10], lineColor=[1,1,1], lineWidth=5)
             etoile4.draw()
             win.flip()
-            
+            poss.append([mouse.getPos()[0],mouse.getPos()[1]])
+        pos.append(poss)
         win.close()
 
 
@@ -328,7 +331,8 @@ for i in range (4):
             etoile4=visual.Line(win, start=[-330,10], end=[-350,-10], lineColor=[1,1,1], lineWidth=5)
             etoile4.draw()
             win.flip()
-        pos.append([event.Mouse.getPos('self')[0], event.Mouse.getPos('self')[1]])
+            poss.append([mouse.getPos()[0],mouse.getPos()[1]])
+        pos.append(poss)
     # AFFICHAGE STIMULUS
             
     # core.wait(0.3)

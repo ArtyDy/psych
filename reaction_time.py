@@ -2,7 +2,7 @@
 from turtle import pos
 import psychopy
 from psychopy import visual, core, event
-
+from scipy.io import savemat
 
 # défini windows
 win = psychopy.visual.Window(
@@ -347,6 +347,29 @@ for i in range (4):
     # core.wait(0.3)
     
 win.close()
+results=dict()
+for k in range(len(pos)):
+    essai='Essai'+str(k)
+    results[essai]=pos[k]
+
+
+savemat("results.mat", results)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #%%
 from turtle import pos

@@ -94,6 +94,7 @@ for i in range (4):
             etoile4=visual.Line(win, start=[330,10], end=[350,-10], lineColor=[1,1,1], lineWidth=5)
             etoile4.draw()
             win.flip()
+            pos.append([event.Mouse.getPos()[0],event.Mouse.getPos()[1]])
 
     if k == "DV":
         #affichage croix rouge

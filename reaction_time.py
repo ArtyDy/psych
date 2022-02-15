@@ -20,9 +20,14 @@ ligne2.draw()
 # affichage
 win.flip()
 core.wait(5)
+
+#affichage cue
+fleche=visual.Line(win, start=[-20,0], end=[-40,0], lineColor=[1,1,1], lineWidth=5)
+fleche.draw()
+
+# affichage
+win.flip()
+core.wait(5)
 win.close()
-
-#affichage stimuli
-
 
 # %%

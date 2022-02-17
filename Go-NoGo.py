@@ -4,6 +4,7 @@ import psychopy
 from psychopy import visual, core, event
 from scipy.io import savemat
 
+sub='sub-00AD'
 # défini windows
 win = psychopy.visual.Window(
     size=[400, 400],
@@ -96,7 +97,14 @@ for i in range (3):
         buttonss.append(button)
         timess.append(time)
         core.wait(2)
-
+    results=dict()
+    for k in range(len(pos)):
+        
+        results['Pos']=pos[k]
+        results['Buttons']=buttonss[k]
+        results['Times']=timess[k]
+    filename="results_"+ sub + "_" + str(i) + ".mat"
+    savemat(filename, results)
     if k == 'C':
         #AFFICHAGE CONDITION CONTROLE R-R-R-R
         crouge.draw()
@@ -149,6 +157,15 @@ for i in range (3):
         pos.append(poss) #j'incrémente dans dictionnaire pos
         buttonss.append(button)
         timess.append(time)
+    results=dict()
+    for k in range(len(pos)):
+        
+        results['Pos']=pos[k]
+        results['Buttons']=buttonss[k]
+        results['Times']=timess[k]
+    filename="results_"+ sub + "_" + str(i) + ".mat"
+    savemat(filename, results)
+
     if k == 'NG':
         #AFFICHAGE CONDITION NO GO B-B-B-R
         cbleu.draw()
@@ -202,19 +219,20 @@ for i in range (3):
         pos.append(poss) #j'incrémente dans dictionnaire pos
         timess.append(time)
         buttonss.append(button)
-
+    results=dict()
+    for k in range(len(pos)):
+        
+        results['Pos']=pos[k]
+        results['Buttons']=buttonss[k]
+        results['Times']=timess[k]
+    filename="results_"+ sub + "_" + str(i) + ".mat"
+    savemat(filename, results)
 
 
 #AFFICHAGE FIN
 win.close()
 
-results=dict()
-for k in range(len(pos)):
-    results['Essai ' + str(k)]=dict()
-    results['Essai ' + str(k)]['Pos']=pos[k]
-    results['Essai ' + str(k)]['Buttons']=buttonss[k]
-    results['Essai ' + str(k)]['Times']=timess[k]
-savemat("results.mat", results)
+
 
 
 

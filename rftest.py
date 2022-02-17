@@ -39,8 +39,18 @@ for k in cnds_len:
     clock=core.Clock()
     rect=visual.Rect(win, width=200, height=200,fillColor="black", lineWidth=5, lineColor=[1, 1, 1], ori=rect_oris[cnds_order[k]] )
     rect.draw()
+    
+    win.flip()
+    core.wait(2.5)
+    rect=visual.Rect(win, width=200, height=200,fillColor="black", lineWidth=5, lineColor=[1, 1, 1], ori=rect_oris[cnds_order[k]] )
+    rect.draw()
     line=visual.Line(win, lineWidth=5, start =[0, -80], end=[0, 80], lineColor="white", ori=rod_oris[cnds_order[k]])
     line.draw()
+    
+    win.flip()
+    core.wait(0.33)
+    rect=visual.Rect(win, width=200, height=200,fillColor="black", lineWidth=5, lineColor=[1, 1, 1], ori=rect_oris[cnds_order[k]] )
+    rect.draw()
     win.flip()
     keys=event.waitKeys(keyList=['left', 'right', 'Escape'], timeStamped=clock)
     if keys=='Escape':

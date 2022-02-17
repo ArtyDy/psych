@@ -105,7 +105,7 @@ for i in range (90):
             results['Pos']=pos[k]
             results['Buttons']=buttonss[k]
             results['Times']=timess[k]
-        filename="results_"+ sub + "_" + str('%02d' % i) + ".mat"
+        filename="results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
         savemat(filename, results)
     if k == 'C':
         #AFFICHAGE CONDITION CONTROLE R-R-R-R
@@ -165,7 +165,7 @@ for i in range (90):
             results['Pos']=pos[k]
             results['Buttons']=buttonss[k]
             results['Times']=timess[k]
-        filename="results_"+ sub + "_" + str('%02d' % i) + ".mat"
+        filename="results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
         savemat(filename, results)
 
     if k == 'NG':
@@ -227,7 +227,7 @@ for i in range (90):
             results['Pos']=pos[k]
             results['Buttons']=buttonss[k]
             results['Times']=timess[k]
-        filename="results_"+ sub + "_" + str('%02d' % i) + ".mat"
+        filename="results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
         savemat(filename, results)
 
 

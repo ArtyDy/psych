@@ -1,6 +1,7 @@
 #%%
+sub='sub-00AD'
 
-
+from logging import shutdown
 import psychopy
 
 import random
@@ -48,17 +49,18 @@ for k in cnds_len:
     rect.draw()
     line=visual.Line(win, lineWidth=5, start =[0, -80], end=[0, 80], lineColor="white", ori=rod_oris[cnds_order[k]])
     line.draw()
-    
+    clock=core.Clock()
     win.flip()
     core.wait(0.33)
     rect=visual.Rect(win, width=200, height=200,fillColor="black", lineWidth=5, lineColor=[1, 1, 1], ori=rect_oris[cnds_order[k]] )
     rect.draw()
+    clock=core.Clock()
     win.flip()
-    keys=event.waitKeys(keyList=['left', 'right', 'Escape'], timeStamped=clock)
+    keys=event.waitKeys(keyList=['left', 'right', 'Esc'], timeStamped=clock)
     print(keys)
-    if keys=='Escape':
+    if keys[0][0]=='Esc':
 
-        win.close()
+        shutdown()
     else:   
         res_keys.append(keys[0][0])
         res_rt.append(keys[0][1])
@@ -66,8 +68,11 @@ for k in cnds_len:
  
 data_dict['keys_pressed']=res_keys
 data_dict['RT']=res_rt
-savemat("results.mat", data_dict)
+filename="results_RFT_"+sub+"_.mat"
+savemat(filename, data_dict)
 win.close()
    
    
     # %%
+
+# %%

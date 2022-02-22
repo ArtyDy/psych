@@ -55,7 +55,7 @@ with open(name, 'w', newline ='') as file2:
         writer.writerow([ c,data[0][list(data[0].keys())[nbessai]],  data[1][list(data[1].keys())[nbessai]],  data[2][list(data[2].keys())[nbessai]],  data[3][list(data[3].keys())[nbessai]],  data[4][list(data[4].keys())[nbessai]],  data[5][list(data[5].keys())[nbessai]],  data[6][list(data[6].keys())[nbessai]],  data[7][list(data[7].keys())[nbessai]],  data[8][list(data[8].keys())[nbessai]],  data[9][list(data[9].keys())[nbessai]],  data[10][list(data[10].keys())[nbessai]],  data[11][list(data[11].keys())[nbessai]],  data[12][list(data[12].keys())[nbessai]],  data[13][list(data[13].keys())[nbessai]],  data[14][list(data[14].keys())[nbessai]],  data[15][list(data[15].keys())[nbessai]],  data[16][list(data[16].keys())[nbessai]],  data[17][list(data[17].keys())[nbessai]]  ])
 
 #%%
-#%% Faire un excel de Right Left
+#%% Faire un excel de RT
 import csv
 
 name = 'psych_RFT_'+ sub + '.csv'

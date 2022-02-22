@@ -254,7 +254,7 @@ for i in range (180):
             results['Pos']=pos[k]
             results['Buttons']=buttonss[k]
             results['Times']=timess[k]
-        filename="/" + sub + "/results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
+        filename="/" + sub + "/results_gng_"+ sub + "_" + str('%03d' % i) + ".mat"
         savemat(filename, results)
 
 

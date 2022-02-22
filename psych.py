@@ -1,4 +1,4 @@
-#%%
+#%% RT
 import scipy.io
 import numpy as np
 sub='sub-00AD'
@@ -41,8 +41,15 @@ for k in conds:
             m=m+1
         RT[k][l]=m/60
 
+#%% GNG
 
-# %%
+#%%
+
+import scipy.io
+
+
+
+# %% Excel
 import matplotlib.pyplot as plt
 
 plt.plot(Vitesse['DV']['Essai158'])

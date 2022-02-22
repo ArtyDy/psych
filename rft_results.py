@@ -15,19 +15,76 @@ listecondition=[15,4,  1, 13, 14, 12, 10,  4, 12,  7, 16,  5, 11,  6,  3, 12, 17
 
 #définition taille du cictionnaire
 data=dict()
+data2=dict()
 for i in range (18):
     data[i]=dict()
+    data2[i]=dict()
 
-for l, cond in zip(range(360), listecondition):
+#enregistrement de data[4][essai8][faux]
+for l, cond in zip(range(234), listecondition):
     data[cond]['Essai'+str(l)]=mat['keys_pressed'][l]
+    data2[cond]['Essai'+str(l)]=mat['RT'][0][l]
+
+
 
 print('ok')
 
-#='essai'+listecondition
+
+# %% Faire un plot
+import matplotlib.pyplot as plt
+
+#prend le vecteur des éléments de data2[0]
+plt.plot([data2[0][k] for k in data2[0].keys()])
+
+
+#%% Faire un excel de Right Left
+import csv
+
+name = 'psych_RFT_'+ sub + '.csv'
+nbcondition=0
+nbessai=0
+
+with open(name, 'w', newline ='') as file2:
+    k=0
+    writer=csv.writer(file2)
+    writer.writerow(['Essai','Cond_0 -7/-45', 'Cond_1 -4/-40', 'Cond_2 -2/-35', 'Cond_3 -1/-30', 'Cond_4 0/-25', 'Cond_5 1/-20', 'Cond_6 2/-15', 'Cond_7 4/-10', 'Cond_8 7/-5', 'Cond_9 -7/0', 'Cond_10 -4/5', 'Cond_11 -2/10', 'Cond_12 -1/15', 'Cond_13 0/20', 'Cond_14 1/25', 'Cond_15 2/30', 'Cond_16 4/35', 'Cond_17 7/40'])
+    for nbessai in range (13):
+        k=k+1
+        c='Essai'+str(k)
+        print([nbessai, nbcondition])
+        writer.writerow([ c,data[0][list(data[0].keys())[nbessai]],  data[1][list(data[1].keys())[nbessai]],  data[2][list(data[2].keys())[nbessai]],  data[3][list(data[3].keys())[nbessai]],  data[4][list(data[4].keys())[nbessai]],  data[5][list(data[5].keys())[nbessai]],  data[6][list(data[6].keys())[nbessai]],  data[7][list(data[7].keys())[nbessai]],  data[8][list(data[8].keys())[nbessai]],  data[9][list(data[9].keys())[nbessai]],  data[10][list(data[10].keys())[nbessai]],  data[11][list(data[11].keys())[nbessai]],  data[12][list(data[12].keys())[nbessai]],  data[13][list(data[13].keys())[nbessai]],  data[14][list(data[14].keys())[nbessai]],  data[15][list(data[15].keys())[nbessai]],  data[16][list(data[16].keys())[nbessai]],  data[17][list(data[17].keys())[nbessai]]  ])
+
+#%%
+#%% Faire un excel de Right Left
+import csv
+
+name = 'psych_RFT_'+ sub + '.csv'
+nbcondition=0
+nbessai=0
+
+with open(name, 'w', newline ='') as file2:
+    k=0
+    writer=csv.writer(file2)
+    writer.writerow(['Essai','Cond_0 -7/-45', 'Cond_1 -4/-40', 'Cond_2 -2/-35', 'Cond_3 -1/-30', 'Cond_4 0/-25', 'Cond_5 1/-20', 'Cond_6 2/-15', 'Cond_7 4/-10', 'Cond_8 7/-5', 'Cond_9 -7/0', 'Cond_10 -4/5', 'Cond_11 -2/10', 'Cond_12 -1/15', 'Cond_13 0/20', 'Cond_14 1/25', 'Cond_15 2/30', 'Cond_16 4/35', 'Cond_17 7/40'])
+    for nbessai in range (13):
+        k=k+1
+        c='Essai'+str(k)
+        print([nbessai, nbcondition])
+        writer.writerow([ c,data[0][list(data[0].keys())[nbessai]],  data[1][list(data[1].keys())[nbessai]],  data[2][list(data[2].keys())[nbessai]],  data[3][list(data[3].keys())[nbessai]],  data[4][list(data[4].keys())[nbessai]],  data[5][list(data[5].keys())[nbessai]],  data[6][list(data[6].keys())[nbessai]],  data[7][list(data[7].keys())[nbessai]],  data[8][list(data[8].keys())[nbessai]],  data[9][list(data[9].keys())[nbessai]],  data[10][list(data[10].keys())[nbessai]],  data[11][list(data[11].keys())[nbessai]],  data[12][list(data[12].keys())[nbessai]],  data[13][list(data[13].keys())[nbessai]],  data[14][list(data[14].keys())[nbessai]],  data[15][list(data[15].keys())[nbessai]],  data[16][list(data[16].keys())[nbessai]],  data[17][list(data[17].keys())[nbessai]]  ])
 
 
 
 
+ 
 
+#%% Avoir la liste des conditions à mettre titre excel
+listeligne=[-7, -4, -2, -1, 0, 1, 2, 4, 7,-7, -4, -2, -1, 0, 1, 2, 4, 7]
+listecarre=[-45, -40,-35,-30,-25,-20,-15,-10,-5,0,5,10,15,20,25,30,35,40]
+listecond=[]
+for v in range (18):
+    chaine='Cond_'+str(v) + ' ' +str(listeligne[v])+ '/' + str(listecarre[v])
+    listecond.append(chaine)
+ 
+print(listecond)
 
 # %%

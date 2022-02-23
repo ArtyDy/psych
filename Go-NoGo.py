@@ -29,7 +29,7 @@ cbleu=visual.Circle(win, radius=150, edges=32, units='', lineWidth=2.5, lineColo
 #définition cercle rouge
 crouge=visual.Circle(win, radius=150, edges=32, units='', lineWidth=2.5, lineColor='red', lineColorSpace='red',fillColor='red', fillColorSpace=None)
 
-#listecondition = ['C', 'NG', 'G', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'G', 'C', 'G', 'NG', 'G', 'C', 'C', 'NG', 'G', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'NG', 'C', 'NG', 'C', 'C', 'NG', 'G', 'G', 'C', 'C', 'C', 'G', 'G', 'NG', 'NG', 'C', 'NG', 'C', 'C', 'G', 'C', 'C', 'NG', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'NG', 'G', 'G', 'G', 'C', 'C', 'C', 'NG', 'NG', 'NG', 'G', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'NG', 'G', 'G', 'G', 'C', 'NG', 'G', 'G']
+# listecondition = ['C', 'NG', 'G', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'G', 'C', 'G', 'NG', 'G', 'C', 'C', 'NG', 'G', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'NG', 'C', 'NG', 'C', 'C', 'NG', 'G', 'G', 'C', 'C', 'C', 'G', 'G', 'NG', 'NG', 'C', 'NG', 'C', 'C', 'G', 'C', 'C', 'NG', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'NG', 'G', 'G', 'G', 'C', 'C', 'C', 'NG', 'NG', 'NG', 'G', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'NG', 'G', 'G', 'G', 'C', 'NG', 'G', 'G']
 # listecondition = ['NG', 'C', 'G', 'C', 'C', 'NG', 'NG', 'G', 'NG', 'G', 'NG', 'G', 'G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'G', 'G', 'C', 'NG', 'C', 'C', 'G', 'C', 'NG', 'C', 'C', 'G', 'G', 'C', 'G', 'NG', 'C', 'NG', 'C', 'G', 'G', 'NG', 'G', 'NG', 'C', 'NG', 'C', 'NG', 'NG', 'G', 'NG', 'G', 'G', 'G', 'G', 'NG', 'NG', 'C', 'NG', 'C', 'G', 'NG', 'G', 'C', 'G', 'G', 'C', 'C', 'NG', 'C', 'NG', 'C', 'C', 'G', 'C', 'G', 'NG', 'C', 'NG', 'NG', 'NG', 'NG', 'C', 'G', 'G', 'C', 'NG', 'C', 'G', 'NG', 'G']
 listecondition=['G', 'NG', 'G', 'NG', 'NG', 'C', 'G', 'G', 'NG', 'G', 'C', 'NG','NG', 'G', 'NG', 'C', 'C', 'G', 'G', 'NG', 'C', 'G', 'G', 'NG','NG', 'G', 'G', 'C', 'C', 'C', 'C', 'G', 'G', 'G', 'NG', 'G', 'C','G', 'G', 'C', 'G', 'NG', 'NG', 'NG', 'C', 'NG', 'C', 'G', 'G','C', 'C', 'C', 'NG', 'G', 'NG', 'C', 'C', 'C', 'G', 'C', 'NG', 'C','G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'NG', 'C', 'C', 'G', 'NG',
 'NG', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'G', 'C', 'G', 'C',
@@ -254,7 +254,7 @@ for i in range (180):
             results['Pos']=pos[k]
             results['Buttons']=buttonss[k]
             results['Times']=timess[k]
-        filename="/" + sub + "/results_gng_"+ sub + "_" + str('%03d' % i) + ".mat"
+        filename="results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
         savemat(filename, results)
 
 

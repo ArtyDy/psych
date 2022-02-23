@@ -1,7 +1,7 @@
 #%% RT
 import scipy.io
 import numpy as np
-sub='sub-00AD'
+sub='sub-04AM'
 
 datapath= sub + '/' + 'results_RT_' + sub+ '.mat'
 conds=['GV', 'GF', 'DV', 'DF']

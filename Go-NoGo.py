@@ -61,6 +61,9 @@ for i in range (180):
     ligne1.draw()
     win.flip()
     core.wait(2)
+    pos=[]
+    timess=[]
+    buttonss=[]
     
     if k == 'G':
         #AFFICHAGE CONDITION GO B-B-B-B
@@ -162,6 +165,7 @@ for i in range (180):
 
         #tant que 3scd ne se sont pas écoulé (60frame/scd)
         j=0
+        poss=[]
         time=[]
         button=[]
         while j != 120:
@@ -227,6 +231,7 @@ for i in range (180):
 
         j=0
         #tant que 3scd ne se sont pas écoulé (60frame/scd)
+        poss=[]
         time=[]
         button=[]
         while j != 120:

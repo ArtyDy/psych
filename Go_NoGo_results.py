@@ -48,5 +48,12 @@ import csv
 name = 'results_GNG_CLIQUE_'+ sub + '.csv'
 
 with open(name, 'w', newline ='') as file2:
+    k=0
     writer=csv.writer(file2)
+    writer.writerow(['Essai','GO','Rest'])
+    for nbessai in range (30):
+        k=k+1
+        c='Essai'+str(k)
+        writer.writerow([ c,listeRT[nbessai],listeRT[nbessai+30]])
 
+# %%

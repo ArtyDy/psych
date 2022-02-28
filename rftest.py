@@ -1,5 +1,5 @@
 #%%
-sub='sub-04AM'
+sub='sub-test'
 
 from logging import shutdown
 import psychopy

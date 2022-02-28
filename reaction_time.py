@@ -1,5 +1,5 @@
 #%%
-sub='sub-00test'
+sub='sub-test'
 from turtle import Screen, pos
 import psychopy
 from psychopy import visual, core, event
@@ -12,85 +12,84 @@ win = psychopy.visual.Window(
     fullscr=True,
     color="black", screen=1
 )
-
-# listecondition = ["GV","GF","DV","DF"]
+listecondition=['D','G','H','B']
+listetemps=[0.2,0.5,0.8,0.2]
+#listecondition=['D', 'D', 'B', 'H', 'D', 'D', 'H', 'B', 'G', 'B', 'H', 'D', 'D', 'G', 'G', 'H', 'G', 'H', 'G', 'B', 'D', 'G', 'G', 'G', 'B', 'G', 'H', 'D', 'G', 'H', 'D', 'G', 'H', 'B', 'H', 'G', 'D', 'D', 'B', 'B', 'H', 'D', 'H', 'B', 'B', 'H', 'H', 'D', 'G', 'D', 'G', 'G', 'B', 'B', 'B', 'D', 'B', 'H', 'H', 'B']
+#listetemps=[0.2, 0.2, 0.5, 0.5, 0.8, 0.2, 0.2, 0.2, 0.2, 0.5, 0.8, 0.5, 0.5, 0.2, 0.8, 0.2, 0.5, 0.8, 0.5, 0.5, 0.8, 0.2, 0.5, 0.5, 0.8, 0.5, 0.5, 0.5, 0.8, 0.5, 0.5, 0.8, 0.8, 0.2, 0.2, 0.8, 0.2, 0.8, 0.8, 0.5, 0.2, 0.8, 0.5, 0.8, 0.8, 0.2, 0.5, 0.2, 0.2, 0.5, 0.8, 0.2, 0.8, 0.5, 0.2, 0.8, 0.2, 0.8, 0.8, 0.2]
+#listecondition = ["G","D","H","B"]
 #listecondition = ['DV', 'GV', 'GV', 'GV', 'GF', 'DV', 'GF', 'GF', 'GV', 'DV', 'DV', 'GV', 'GV', 'GV', 'GV', 'DV', 'DV', 'DF', 'GV', 'DF', 'GF', 'GV', 'DV', 'GV', 'DV', 'DF', 'DV', 'DV', 'GF', 'DV', 'DV', 'DF', 'DF', 'GV', 'GV', 'DV', 'DV', 'DV', 'GV', 'GV']
-listecondition=['DF', 'DV', 'DV', 'GV', 'GV', 'DF', 'GF', 'DV', 'DF', 'DV', 'GV', 'DV', 'DV', 'DV', 'DF', 'DF', 'GV', 'GV', 'DV', 'GV', 'DV', 'DV', 'DV', 'DF', 'DV', 'DV', 'DF', 'GV', 'DV', 'DF', 'GV', 'DF', 'GV', 'GV', 'GV', 'GF', 'GV', 'GV', 'DV', 'DV', 'GF', 'GV', 'GV', 'DF', 'GV', 'GV', 'DF', 'GV', 'GF', 'GF', 'GV', 'GV', 'DV', 'DV', 'GF', 'DV', 'GV', 'DV', 'GV', 'GV', 'GV', 'DV', 'GV', 'DV', 'DV', 'GV', 'GV', 'GV', 'DV', 'GF', 'GV', 'DV', 'DF', 'DF', 'GV', 'DV', 'DV', 'GV', 'DV', 'GV', 'GV', 'DV', 'GV', 'DV', 'GV', 'DV', 'DF', 'DV', 'GV', 'DV', 'GV', 'DV', 'GF', 'GF', 'DV', 'DV', 'GV', 'DV', 'DV', 'GV', 'DV', 'GF', 'GV', 'GF', 'GV', 'DV', 'GV', 'DV', 'DV', 'DF', 'DF', 'GF', 'DV', 'GF', 'GV', 'GV', 'GF', 'GV', 'GF', 'DV', 'DV', 'DV', 'GV', 'GF', 'DF', 'GV', 'GF', 'GV', 'DV', 'GV', 'GV', 'DV', 'DF', 'DV', 'GV', 'DV', 'DV', 'GF', 'GV', 'DV', 'GV', 'GV', 'GV', 'DV', 'DV', 'GF', 'GV', 'DF', 'GV', 'GF', 'DF', 'DV', 'DV', 'GV', 'DV', 'GV', 'DV', 'DV', 'DV', 'GV']
+###listecondition=['DF', 'DV', 'DV', 'GV', 'GV', 'DF', 'GF', 'DV', 'DF', 'DV', 'GV', 'DV', 'DV', 'DV', 'DF', 'DF', 'GV', 'GV', 'DV', 'GV', 'DV', 'DV', 'DV', 'DF', 'DV', 'DV', 'DF', 'GV', 'DV', 'DF', 'GV', 'DF', 'GV', 'GV', 'GV', 'GF', 'GV', 'GV', 'DV', 'DV', 'GF', 'GV', 'GV', 'DF', 'GV', 'GV', 'DF', 'GV', 'GF', 'GF', 'GV', 'GV', 'DV', 'DV', 'GF', 'DV', 'GV', 'DV', 'GV', 'GV', 'GV', 'DV', 'GV', 'DV', 'DV', 'GV', 'GV', 'GV', 'DV', 'GF', 'GV', 'DV', 'DF', 'DF', 'GV', 'DV', 'DV', 'GV', 'DV', 'GV', 'GV', 'DV', 'GV', 'DV', 'GV', 'DV', 'DF', 'DV', 'GV', 'DV', 'GV', 'DV', 'GF', 'GF', 'DV', 'DV', 'GV', 'DV', 'DV', 'GV', 'DV', 'GF', 'GV', 'GF', 'GV', 'DV', 'GV', 'DV', 'DV', 'DF', 'DF', 'GF', 'DV', 'GF', 'GV', 'GV', 'GF', 'GV', 'GF', 'DV', 'DV', 'DV', 'GV', 'GF', 'DF', 'GV', 'GF', 'GV', 'DV', 'GV', 'GV', 'DV', 'DF', 'DV', 'GV', 'DV', 'DV', 'GF', 'GV', 'DV', 'GV', 'GV', 'GV', 'DV', 'DV', 'GF', 'GV', 'DF', 'GV', 'GF', 'DF', 'DV', 'DV', 'GV', 'DV', 'GV', 'DV', 'DV', 'DV', 'GV']
 # listecondition=['DV', 'DV', 'DV', 'DV']
-pos=[]
+
+#pos=[]
+listecond=['D','G','H','B']
+listespace=[]
+
+#définition des carrés
+rect=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[-300,0] )
+rect1=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[300,0] )
+rect2=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[0,300] )
+rect3=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[0,-300] )
+
+#croix rouge
+lignerouge=visual.Line(win, start=[-40,0], end=[40,0], lineColor="red", lineWidth=5)
+lignerouge1=visual.Line(win, start=[0,-40], end=[0,40], lineColor="red", lineWidth=5)
+
+#croix verte
+ligneverte=visual.Line(win, start=[-40,0], end=[40,0], lineColor="green", lineWidth=5)
+ligneverte1=visual.Line(win, start=[0,-40], end=[0,40], lineColor="green", lineWidth=5)
+
+
 for i in range (len(listecondition)):
     print(i)
     print(listecondition[i])
     k=listecondition[i]
-    mouse=event.Mouse(win=win, visible=True, newPos=[0,0])
-    poss=[]
-    if k == "GF":
+    mouse=event.Mouse(win=win, visible=False, newPos=[0,0])
+    #poss=[]
+    if k == "D":
         #affichage croix rouge
-        ligne=visual.Line(win, start=[-40,0], end=[40,0], lineColor="red", lineWidth=5)
-        ligne.draw()
-        ligne1=visual.Line(win, start=[0,-40], end=[0,40], lineColor="red", lineWidth=5)
-        ligne1.draw()
+        lignerouge.draw()
+        lignerouge1.draw()
 
-        #affichage carré gauche
-        rect=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[-300,0] )
+        #affichage carrés gauche, droit, haut, bas
         rect.draw()
-
-        #affichage carré droit
-        rect1=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[300,0] )
         rect1.draw()
+        rect2.draw()
+        rect3.draw()
 
         # AFFICHAGE BASE ROUGE
         win.flip()
-        core.wait(0.8)
+        core.wait(2)
 
         #affichage croix verte
-        ligne=visual.Line(win, start=[-40,0], end=[40,0], lineColor="green", lineWidth=5)
-        ligne.draw()
-        ligne1=visual.Line(win, start=[0,-40], end=[0,40], lineColor="green", lineWidth=5)
-        ligne1.draw()
+        ligneverte.draw()
+        ligneverte1.draw()
         rect.draw()
         rect1.draw()
+        rect2.draw()
+        rect3.draw()
 
         # AFFICHAGE BASE VERTE
         win.flip()
-        core.wait(0.8)
+        core.wait(listetemps[i])
 
-        #affichage cue gauche
-        ligne.draw()
-        ligne1.draw()
-        rect.draw()
-        rect1.draw()
-        fleche=visual.Line(win, start=[-120,0], end=[-180,0], lineColor=[1,1,1], lineWidth=5)
-        fleche.draw()
-        fleche1=visual.Line(win, start=[-180,0], end=[-165,-10], lineColor=[1,1,1], lineWidth=5)
-        fleche1.draw()
-        fleche2=visual.Line(win, start=[-180,0], end=[-165,10], lineColor=[1,1,1], lineWidth=5)
-        fleche2.draw()
+        # #affichage stimulus droit
+        # ligneverte.draw()
+        # ligneverte1.draw()
+        # rect.draw()
+        # rect1.draw()
 
+        clock=core.Clock()
+        
+        bool=0
 
-        #AFFICHAGE CUE
-        win.flip()
-        core.wait(2.36)
-
-        #AFFICHAGE BASE VERTE DELAI
-        ligne.draw()
-        ligne1.draw()
-        rect.draw()
-        rect1.draw()
-        win.flip()
-        core.wait(1.5)
-
-        #affichage stimulus droit
-        ligne.draw()
-        ligne1.draw()
-        rect.draw()
-        rect1.draw()
-
-        while(event.Mouse.getPressed('self')[0]!=1):
-            ligne.draw()
-            ligne1.draw()
+        while(bool==0):
+            ligneverte.draw()
+            ligneverte1.draw()
             rect.draw()
             rect1.draw()
+            rect2.draw()
+            rect3.draw()
             etoile1=visual.Line(win, start=[285,0], end=[315,0], lineColor=[1,1,1], lineWidth=5)
             etoile1.draw()
             etoile2=visual.Line(win, start=[300,15], end=[300,-15], lineColor=[1,1,1], lineWidth=5)
@@ -100,153 +99,121 @@ for i in range (len(listecondition)):
             etoile4=visual.Line(win, start=[290,10], end=[310,-10], lineColor=[1,1,1], lineWidth=5)
             etoile4.draw()
             win.flip()
-            poss.append([mouse.getPos()[0], mouse.getPos()[1]])
-        pos.append(poss)
-    if k == "DV":
+
+            clock=core.Clock()
+            keys=event.waitKeys(keyList=['space'], timeStamped=clock)
+            listespace.append(keys[0][1])
+            bool=1
+
+            #poss.append([mouse.getPos()[0], mouse.getPos()[1]])
+        #pos.append(poss)
+
+    if k == "H":
         
         #affichage croix rouge
-        ligne=visual.Line(win, start=[-40,0], end=[40,0], lineColor="red", lineWidth=5)
-        ligne.draw()
-        ligne1=visual.Line(win, start=[0,-40], end=[0,40], lineColor="red", lineWidth=5)
-        ligne1.draw()
+        lignerouge.draw()
+        lignerouge1.draw()
 
-        #affichage carré gauche
-        rect=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[-300,0] )
+        #affichage carrés
         rect.draw()
-
-        #affichage carré droit
-        rect1=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[300,0] )
         rect1.draw()
+        rect2.draw()
+        rect3.draw()
 
         # AFFICHAGE BASE ROUGE
         win.flip()
-        core.wait(0.8)
+        core.wait(2)
 
         #affichage croix verte
-        ligne=visual.Line(win, start=[-40,0], end=[40,0], lineColor="green", lineWidth=5)
-        ligne.draw()
-        ligne1=visual.Line(win, start=[0,-40], end=[0,40], lineColor="green", lineWidth=5)
-        ligne1.draw()
+        ligneverte.draw()
+        ligneverte1.draw()
         rect.draw()
         rect1.draw()
+        rect2.draw()
+        rect3.draw()
 
         # AFFICHAGE BASE VERTE
         win.flip()
-        core.wait(0.8)
-
-        #affichage cue droite
-        ligne.draw()
-        ligne1.draw()
-        rect.draw()
-        rect1.draw()
-        fleche=visual.Line(win, start=[120,0], end=[180,0], lineColor=[1,1,1], lineWidth=5)
-        fleche.draw()
-        fleche1=visual.Line(win, start=[180,0], end=[165,-10], lineColor=[1,1,1], lineWidth=5)
-        fleche1.draw()
-        fleche2=visual.Line(win, start=[180,0], end=[165,10], lineColor=[1,1,1], lineWidth=5)
-        fleche2.draw()
-
-        #AFFICHAGE CUE
-        win.flip()
-        core.wait(2.36)
-
-        #AFFICHAGE BASE VERTE DELAI
-        ligne.draw()
-        ligne1.draw()
-        rect.draw()
-        rect1.draw()
-        win.flip()
-        core.wait(1.5)
+        core.wait(listetemps[i])
 
         #affichage stimulus droit
-        ligne.draw()
-        ligne1.draw()
+        ligneverte.draw()
+        ligneverte1.draw()
         rect.draw()
         rect1.draw()
+        rect2.draw()
+        rect3.draw()
 
-        while(event.Mouse.getPressed('self')[0]!=1):
-            ligne.draw()
-            ligne1.draw()
+        bool=0
+
+        while(bool==0):
+            ligneverte.draw()
+            ligneverte1.draw()
             rect.draw()
             rect1.draw()
-            etoile1=visual.Line(win, start=[285,0], end=[315,0], lineColor=[1,1,1], lineWidth=5)
+            rect2.draw()
+            rect3.draw()
+
+            etoile1=visual.Line(win, start=[0,285], end=[0,315], lineColor=[1,1,1], lineWidth=5)
             etoile1.draw()
-            etoile2=visual.Line(win, start=[300,15], end=[300,-15], lineColor=[1,1,1], lineWidth=5)
+            etoile2=visual.Line(win, start=[15,300], end=[-15,300], lineColor=[1,1,1], lineWidth=5)
             etoile2.draw()
-            etoile3=visual.Line(win, start=[310,10], end=[290,-10], lineColor=[1,1,1], lineWidth=5)
+            etoile3=visual.Line(win, start=[10,310], end=[-10,290], lineColor=[1,1,1], lineWidth=5)
             etoile3.draw()
-            etoile4=visual.Line(win, start=[290,10], end=[310,-10], lineColor=[1,1,1], lineWidth=5)
+            etoile4=visual.Line(win, start=[10,290], end=[-10,310], lineColor=[1,1,1], lineWidth=5)
             etoile4.draw()
             win.flip()
-            poss.append([mouse.getPos()[0],mouse.getPos()[1]])
-        pos.append(poss)
+            #poss.append([mouse.getPos()[0],mouse.getPos()[1]])
 
-    if k == "DF":
+            clock=core.Clock()
+            keys=event.waitKeys(keyList=['space'], timeStamped=clock)
+            listespace.append(keys[0][1])
+            bool=1
+        #pos.append(poss)
+
+    if k == "G":
         #affichage croix rouge
-        ligne=visual.Line(win, start=[-40,0], end=[40,0], lineColor="red", lineWidth=5)
-        ligne.draw()
-        ligne1=visual.Line(win, start=[0,-40], end=[0,40], lineColor="red", lineWidth=5)
-        ligne1.draw()
+        lignerouge.draw()
+        lignerouge1.draw()
 
-        #affichage carré gauche
-        rect=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[-300,0] )
+        #affichage carrés
         rect.draw()
-
-        #affichage carré droit
-        rect1=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[300,0] )
         rect1.draw()
+        rect2.draw()
+        rect3.draw()
 
         # AFFICHAGE BASE ROUGE
         win.flip()
-        core.wait(0.8)
+        core.wait(2)
 
         #affichage croix verte
-        ligne=visual.Line(win, start=[-40,0], end=[40,0], lineColor="green", lineWidth=5)
-        ligne.draw()
-        ligne1=visual.Line(win, start=[0,-40], end=[0,40], lineColor="green", lineWidth=5)
-        ligne1.draw()
+        ligneverte.draw()
+        ligneverte1.draw()
         rect.draw()
         rect1.draw()
+        rect2.draw()
+        rect3.draw()
 
         # AFFICHAGE BASE VERTE
         win.flip()
-        core.wait(0.8)
-
-        #affichage cue droite
-        ligne.draw()
-        ligne1.draw()
-        rect.draw()
-        rect1.draw()
-        fleche=visual.Line(win, start=[120,0], end=[180,0], lineColor=[1,1,1], lineWidth=5)
-        fleche.draw()
-        fleche1=visual.Line(win, start=[180,0], end=[165,-10], lineColor=[1,1,1], lineWidth=5)
-        fleche1.draw()
-        fleche2=visual.Line(win, start=[180,0], end=[165,10], lineColor=[1,1,1], lineWidth=5)
-        fleche2.draw()
-
-        #AFFICHAGE CUE
-        win.flip()
-        core.wait(2.36)
-
-        #AFFICHAGE BASE VERTE DELAI
-        ligne.draw()
-        ligne1.draw()
-        rect.draw()
-        rect1.draw()
-        win.flip()
-        core.wait(1.5)
+        core.wait(listetemps[i])
 
         #affichage stimulus gauche
-        ligne.draw()
-        ligne1.draw()
+        ligneverte.draw()
+        ligneverte1.draw()
         rect.draw()
         rect1.draw()
+        rect2.draw()
+        rect3.draw()
 
-        while(event.Mouse.getPressed('self')[0]!=1):
-            ligne.draw()
-            ligne1.draw()
+        bool=0
+        while(bool==0):
+            ligneverte.draw()
+            ligneverte1.draw()
             rect.draw()
             rect1.draw()
+            rect2.draw()
+            rect3.draw()
             etoile1=visual.Line(win, start=[-285,0], end=[-315,0], lineColor=[1,1,1], lineWidth=5)
             etoile1.draw()
             etoile2=visual.Line(win, start=[-300,15], end=[-300,-15], lineColor=[1,1,1], lineWidth=5)
@@ -256,107 +223,81 @@ for i in range (len(listecondition)):
             etoile4=visual.Line(win, start=[-290,10], end=[-310,-10], lineColor=[1,1,1], lineWidth=5)
             etoile4.draw()
             win.flip()
-            poss.append([mouse.getPos()[0],mouse.getPos()[1]])
-        pos.append(poss)
+
+            clock=core.Clock()
+            keys=event.waitKeys(keyList=['space'], timeStamped=clock)
+            listespace.append(keys[0][1])
+            bool=1
         
 
 
-    if k == "GV":
+    if k == "B":
         #affichage croix rouge
-        ligne=visual.Line(win, start=[-40,0], end=[40,0], lineColor="red", lineWidth=5)
-        ligne.draw()
-        ligne1=visual.Line(win, start=[0,-40], end=[0,40], lineColor="red", lineWidth=5)
-        ligne1.draw()
+        lignerouge.draw()
+        lignerouge1.draw()
 
-        #affichage carré gauche
-        rect=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[-300,0] )
+        #affichage carrés
         rect.draw()
-
-        #affichage carré droit
-        rect1=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[300,0] )
         rect1.draw()
+        rect2.draw()
+        rect3.draw()
 
         # AFFICHAGE BASE ROUGE
         win.flip()
-        core.wait(0.8)
+        core.wait(2)
 
         #affichage croix verte
-        ligne=visual.Line(win, start=[-40,0], end=[40,0], lineColor="green", lineWidth=5)
-        ligne.draw()
-        ligne1=visual.Line(win, start=[0,-40], end=[0,40], lineColor="green", lineWidth=5)
-        ligne1.draw()
+        ligneverte.draw()
+        ligneverte1.draw()
         rect.draw()
         rect1.draw()
+        rect2.draw()
+        rect3.draw()
 
         # AFFICHAGE BASE VERTE
         win.flip()
-        core.wait(0.8)
-
-        #affichage cue gauche
-        ligne.draw()
-        ligne1.draw()
-        rect.draw()
-        rect1.draw()
-        fleche=visual.Line(win, start=[-120,0], end=[-180,0], lineColor=[1,1,1], lineWidth=5)
-        fleche.draw()
-        fleche1=visual.Line(win, start=[-180,0], end=[-165,-10], lineColor=[1,1,1], lineWidth=5)
-        fleche1.draw()
-        fleche2=visual.Line(win, start=[-180,0], end=[-165,10], lineColor=[1,1,1], lineWidth=5)
-        fleche2.draw()
-
-        #AFFICHAGE CUE
-        win.flip()
-        core.wait(2.36)
-
-        #AFFICHAGE BASE VERTE DELAI
-        ligne.draw()
-        ligne1.draw()
-        rect.draw()
-        rect1.draw()
-        win.flip()
-        core.wait(1.5)
+        core.wait(listetemps[i])
 
         #affichage stimulus gauche
-        ligne.draw()
-        ligne1.draw()
+        ligneverte.draw()
+        ligneverte1.draw()
         rect.draw()
         rect1.draw()
+        rect2.draw()
+        rect3.draw()
         
-        while(event.Mouse.getPressed('self')[0]!=1):
-
-            ligne.draw()
-            ligne1.draw()
+        bool=0
+        while(bool==0):
+            ligneverte.draw()
+            ligneverte1.draw()
             rect.draw()
             rect1.draw()
-            etoile1=visual.Line(win, start=[-285,0], end=[-315,0], lineColor=[1,1,1], lineWidth=5)
+            rect2.draw()
+            rect3.draw()
+            etoile1=visual.Line(win, start=[0,-285], end=[0,-315], lineColor=[1,1,1], lineWidth=5)
             etoile1.draw()
-            etoile2=visual.Line(win, start=[-300,15], end=[-300,-15], lineColor=[1,1,1], lineWidth=5)
+            etoile2=visual.Line(win, start=[15,-300], end=[-15,-300], lineColor=[1,1,1], lineWidth=5)
             etoile2.draw()
-            etoile3=visual.Line(win, start=[-310,10], end=[-290,-10], lineColor=[1,1,1], lineWidth=5)
+            etoile3=visual.Line(win, start=[10,-310], end=[-10,-290], lineColor=[1,1,1], lineWidth=5)
             etoile3.draw()
-            etoile4=visual.Line(win, start=[-290,10], end=[-310,-10], lineColor=[1,1,1], lineWidth=5)
+            etoile4=visual.Line(win, start=[10,-290], end=[-10,-310], lineColor=[1,1,1], lineWidth=5)
             etoile4.draw()
             win.flip()
-            poss.append([mouse.getPos()[0],mouse.getPos()[1]])
-        pos.append(poss)
+
+            clock=core.Clock()
+            keys=event.waitKeys(keyList=['space'], timeStamped=clock)
+            listespace.append(keys[0][1])
+            bool=1
+
+        #pos.append(poss)
     # AFFICHAGE STIMULUS
             
-    # core.wait(0.3)
 
-
-    #AFFICHAGE DELAI
-    # ligne.draw()
-    # ligne1.draw()
-    # rect.draw()
-    # rect1.draw()
-    # win.flip()
-    # core.wait(0.3)
-    
 win.close()
 results=dict()
-for k in range(len(pos)):
+for k in range(len(listecondition)): #a voir ?
     essai='Essai'+str(k)
-    results[essai]=pos[k]
+    results[essai]=listespace[k]
 
 filename = 'results_RT_'+ sub +".mat"
 savemat(filename, results)
@@ -364,6 +305,124 @@ savemat(filename, results)
 
 
 
+
+
+
+
+
+#%%
+import random
+
+listecondition=[]
+listetemps=[]
+liste=['D2','D5','D8','G2','G5','G8','H2','H5','H8','B2','B5','B8','D2','D5','D8','G2','G5','G8','H2','H5','H8','B2','B5','B8','D2','D5','D8','G2','G5','G8','H2','H5','H8','B2','B5','B8','D2','D5','D8','G2','G5','G8','H2','H5','H8','B2','B5','B8','D2','D5','D8','G2','G5','G8','H2','H5','H8','B2','B5','B8',]
+random.shuffle(liste)
+
+for i in liste :
+    if i == 'D2' :
+        listecondition.append('D')
+        listetemps.append(0.2)
+    if i == 'D5' :
+        listecondition.append('D')
+        listetemps.append(0.5)
+    if i == 'D8' :
+        listecondition.append('D')
+        listetemps.append(0.8)
+    if i == 'G2' :
+        listecondition.append('G')
+        listetemps.append(0.2)
+    if i == 'G5' :
+        listecondition.append('G')
+        listetemps.append(0.5)
+    if i == 'G8' :
+        listecondition.append('G')
+        listetemps.append(0.8)
+    if i == 'H2' :
+        listecondition.append('H')
+        listetemps.append(0.2)
+    if i == 'H5' :
+        listecondition.append('H')
+        listetemps.append(0.5)
+    if i == 'H8' :
+        listecondition.append('H')
+        listetemps.append(0.8)
+    if i == 'B2' :
+        listecondition.append('B')
+        listetemps.append(0.2)
+    if i == 'B5' :
+        listecondition.append('B')
+        listetemps.append(0.5)
+    if i == 'B8' :
+        listecondition.append('B')
+        listetemps.append(0.8)
+
+
+print(listecondition)
+print(listetemps)
+
+
+#%%
+
+from turtle import Screen, pos
+import psychopy
+from psychopy import visual, core, event
+from scipy.io import savemat
+
+# défini windows
+win = psychopy.visual.Window(
+    
+    units="pix",
+    fullscr=True,
+    color="black", screen=1
+)
+clock=core.Clock()
+psychopy.event.waitKeys()
+keys=event.waitKeys(keyList=['space'], timeStamped=clock)
+print(keys)
+win.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#%%
+#affichage cue gauche
+        ligne.draw()
+        ligne1.draw()
+        rect.draw()
+        rect1.draw()
+        fleche=visual.Line(win, start=[-120,0], end=[-180,0], lineColor=[1,1,1], lineWidth=5)
+        fleche.draw()
+        fleche1=visual.Line(win, start=[-180,0], end=[-165,-10], lineColor=[1,1,1], lineWidth=5)
+        fleche1.draw()
+        fleche2=visual.Line(win, start=[-180,0], end=[-165,10], lineColor=[1,1,1], lineWidth=5)
+        fleche2.draw()
+
+
+
+
+        #affichage cue droite
+        ligne.draw()
+        ligne1.draw()
+        rect.draw()
+        rect1.draw()
+        fleche=visual.Line(win, start=[120,0], end=[180,0], lineColor=[1,1,1], lineWidth=5)
+        fleche.draw()
+        fleche1=visual.Line(win, start=[180,0], end=[165,-10], lineColor=[1,1,1], lineWidth=5)
+        fleche1.draw()
+        fleche2=visual.Line(win, start=[180,0], end=[165,10], lineColor=[1,1,1], lineWidth=5)
+        fleche2.draw()
 
 
 
@@ -389,6 +448,18 @@ listecondition = ["GV","GV","GV","GV","GV","GV","GV","GV","GV","GV","GV","GV","G
 
 random.shuffle(listecondition)
 print (listecondition)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -505,6 +576,25 @@ win.close()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+#%%
+data=dict()
+data['lettre']=dict()
+
+liste=['A','B','C']
+data['lettre']=liste
 
 #%% droite vrai
 

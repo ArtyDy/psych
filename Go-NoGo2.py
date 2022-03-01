@@ -41,6 +41,7 @@ listecondition=['G']
 #listecondition=['G', 'NG', 'G', 'NG', 'NG', 'C', 'G', 'G', 'NG', 'G', 'C', 'NG','NG', 'G', 'NG', 'C', 'C', 'G', 'G', 'NG', 'C', 'G', 'G', 'NG','NG', 'G', 'G', 'C', 'C', 'C', 'C', 'G', 'G', 'G', 'NG', 'G', 'C','G', 'G', 'C', 'G', 'NG', 'NG', 'NG', 'C', 'NG', 'C', 'G', 'G','C', 'C', 'C', 'NG', 'G', 'NG', 'C', 'C', 'C', 'G', 'C', 'NG', 'C','G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'NG', 'C', 'C', 'G', 'NG',
 
 listespace=[]
+keyss=[]
 
 for i in range (1): #180
     print(i)
@@ -118,6 +119,7 @@ for i in range (1): #180
         clock=core.Clock()
         win.flip()
         g=0
+        keys=[]
         while g!=60:
             if g<=48:
                 cbleu.draw()
@@ -128,7 +130,14 @@ for i in range (1): #180
             win.flip()
             g=g+1
             ke=event.getKeys(keyList=['space'], timeStamped=clock)
-        print(ke)
+            if ke != []:
+                keys.append(ke)
+            else:
+                keys.append([])
+        
+    keyss.append(keys) 
+        
+        # print(ke)
         # print(ke[0][1])
         # if ke==[]:
         #     core.wait(0.8)
@@ -194,16 +203,26 @@ for i in range (1): #180
         win.flip()
         core.wait(0.2)
        
-        crouge.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
+    #    
 
         clock=core.Clock()
         win.flip()
-        for f in range (48):
-            key=event.waitKeys(maxWait=0.8, keyList=['space'], timeStamped=clock)
+        g=0
+        keys=[]
+        while g!=60:
+            if g<=48:
+                cbleu.draw()
+            rect.draw()
+            rect1.draw()
+            rect2.draw()
+            rect3.draw() 
+            win.flip()
+            g=g+1
+            ke=event.getKeys(keyList=['space'], timeStamped=clock)
+            if ke != []:
+                keys.append(ke)
+            else:
+                keys.append([])
         print(key)
         # core.wait(0.8)
         listespace.append(key)

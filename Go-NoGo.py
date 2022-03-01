@@ -103,6 +103,7 @@ for i in range (180):
         poss=[]
         time=[]
         button=[]
+        
         while j != 120:
             mouse.setVisible(1)
             if j<=48:

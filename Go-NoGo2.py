@@ -35,7 +35,7 @@ rect1=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lin
 rect2=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[0,300] )
 rect3=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[0,-300] )
 
-listecondition=['NG']
+listecondition=['G']
 # listecondition = ['C', 'NG', 'G', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'G', 'C', 'G', 'NG', 'G', 'C', 'C', 'NG', 'G', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'NG', 'C', 'NG', 'C', 'C', 'NG', 'G', 'G', 'C', 'C', 'C', 'G', 'G', 'NG', 'NG', 'C', 'NG', 'C', 'C', 'G', 'C', 'C', 'NG', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'NG', 'G', 'G', 'G', 'C', 'C', 'C', 'NG', 'NG', 'NG', 'G', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'NG', 'G', 'G', 'G', 'C', 'NG', 'G', 'G']
 # listecondition = ['NG', 'C', 'G', 'C', 'C', 'NG', 'NG', 'G', 'NG', 'G', 'NG', 'G', 'G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'G', 'G', 'C', 'NG', 'C', 'C', 'G', 'C', 'NG', 'C', 'C', 'G', 'G', 'C', 'G', 'NG', 'C', 'NG', 'C', 'G', 'G', 'NG', 'G', 'NG', 'C', 'NG', 'C', 'NG', 'NG', 'G', 'NG', 'G', 'G', 'G', 'G', 'NG', 'NG', 'C', 'NG', 'C', 'G', 'NG', 'G', 'C', 'G', 'G', 'C', 'C', 'NG', 'C', 'NG', 'C', 'C', 'G', 'C', 'G', 'NG', 'C', 'NG', 'NG', 'NG', 'NG', 'C', 'G', 'G', 'C', 'NG', 'C', 'G', 'NG', 'G']
 #listecondition=['G', 'NG', 'G', 'NG', 'NG', 'C', 'G', 'G', 'NG', 'G', 'C', 'NG','NG', 'G', 'NG', 'C', 'C', 'G', 'G', 'NG', 'C', 'G', 'G', 'NG','NG', 'G', 'G', 'C', 'C', 'C', 'C', 'G', 'G', 'G', 'NG', 'G', 'C','G', 'G', 'C', 'G', 'NG', 'NG', 'NG', 'C', 'NG', 'C', 'G', 'G','C', 'C', 'C', 'NG', 'G', 'NG', 'C', 'C', 'C', 'G', 'C', 'NG', 'C','G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'NG', 'C', 'C', 'G', 'NG',
@@ -44,6 +44,7 @@ listespace=[]
 
 for i in range (1): #180
     print(i)
+    print(listecondition[i])
     k=listecondition[i]
 
     #initialisation sourie pas visible
@@ -112,17 +113,39 @@ for i in range (1): #180
         rect1.draw()
         rect2.draw()
         rect3.draw() 
-        win.flip()
        
         # clock.reset()
         clock=core.Clock()
-        core.wait(0.8)
+        win.flip()
+        g=0
+        while g!=60:
+            if g<=48:
+                cbleu.draw()
+            rect.draw()
+            rect1.draw()
+            rect2.draw()
+            rect3.draw() 
+            win.flip()
+            g=g+1
+            ke=event.getKeys(keyList=['space'], timeStamped=clock)
+        print(ke)
+        # print(ke[0][1])
+        # if ke==[]:
+        #     core.wait(0.8)
+        # elif ke[0][1]<0.8:
+        #     core.wait(0.8-(ke[0][1]))
+        # else:
+        #     core.wait(0.8)
+        listespace.append(ke)
 
-        for j in range (48):
-            keys=event.getKeys(keyList=['space'], timeStamped=clock)
-            print(j)
-        listespace.append(keys)
+        rect.draw()
+        rect1.draw()
+        rect2.draw()
+        rect3.draw()
+        win.flip()
+        core.wait(0.2)
 
+        # listespace.append(ke)
         # results=dict()
         # filename="results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
         # savemat(filename, results)
@@ -176,15 +199,21 @@ for i in range (1): #180
         rect1.draw()
         rect2.draw()
         rect3.draw()
-        win.flip()
-        clock=core.Clock()
-        core.wait(0.8)
-        # clock.reset()
 
-        for j in range (48):
-            keys=event.getKeys(keyList=['space'], timeStamped=clock)
-            print(j)
-        listespace.append(keys)
+        clock=core.Clock()
+        win.flip()
+        for f in range (48):
+            key=event.waitKeys(maxWait=0.8, keyList=['space'], timeStamped=clock)
+        print(key)
+        # core.wait(0.8)
+        listespace.append(key)
+
+        rect.draw()
+        rect1.draw()
+        rect2.draw()
+        rect3.draw()
+        win.flip()
+        core.wait(0.2)
 
         # results=dict()
         # filename="results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
@@ -227,32 +256,53 @@ for i in range (1): #180
         rect3.draw()
         win.flip()
         core.wait(0.8)
+
         rect.draw()
         rect1.draw()
         rect2.draw()
         rect3.draw()
         win.flip()
         core.wait(0.2)
-        clock=core.Clock()
-        print('1')
-        for j in range(120):
-            print('2')
-            if j<=48:
-                print('3')
-                crouge.draw()
-                
-                rect.draw()
-                rect1.draw()
-                rect2.draw()
-                rect3.draw()
-                win.flip()
 
-                keys=event.getKeys(keyList=['space'], timeStamped=clock)
-                # keys=1
-            print('ok')
-        # core.wait(5)
-        
-        listespace.append(keys)  
+        crouge.draw()
+        rect.draw()
+        rect1.draw()
+        rect2.draw()
+        rect3.draw()
+
+        clock=core.Clock()
+        win.flip()
+        keyss=event.waitKeys(maxWait=0.8, keyList=['space'], timeStamped=clock)
+        print(keyss)
+        # core.wait(0.8)
+        listespace.append(keyss)
+        rect.draw()
+        rect1.draw()
+        rect2.draw()
+        rect3.draw()
+        win.flip()
+        core.wait(0.2)
+        # win.flip()
+        # core.wait(0.2)
+        # clock=core.Clock()
+        # print('1')
+        # for j in range(120):
+        #     print('2')
+        #     if j<=48:
+        #         print('3')
+        #         crouge.draw()
+                
+        #         rect.draw()
+        #         rect1.draw()
+        #         rect2.draw()
+        #         rect3.draw()
+        #         win.flip()
+
+        #         keys=event.getKeys(keyList=['space'], timeStamped=clock)
+        #         # keys=1
+        #     print('ok')
+        # # core.wait(5)
+         
                     
         # results=dict()
         # for k in range(len(pos)):
@@ -285,6 +335,7 @@ win = psychopy.visual.Window(
     units="pix",
     fullscr=True,
     color="black",
+
     screen=1
 )
 clock=core.Clock()
@@ -293,8 +344,7 @@ ke=event.getKeys(keyList=['space'], timeStamped=clock)
 print(ke)
 core.wait(5)
 win.close()
-
-    # %%
+ # %%
 import random
 
 #listecondition = ["C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG"]

@@ -1,5 +1,4 @@
 #%%
-#%%
 from turtle import pos
 import psychopy
 from psychopy import visual, core, event
@@ -10,6 +9,7 @@ from pathlib import Path
 sub='sub-test'
 dir ="/" + sub
 Path(dir).mkdir(parents=True, exist_ok=True)
+
 # défini windows
 win = psychopy.visual.Window(
     size=[400, 400],
@@ -25,6 +25,8 @@ core.wait(0.5)
 
 #définition cercle bleu 
 cbleu=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None)
+cbleuhaut=visual.Circle(win, radius=50, edges=32, units='', pos=300,    lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None)
+
 
 #définition cercle rouge
 crouge=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='red', lineColorSpace='red',fillColor='red', fillColorSpace=None)
@@ -36,6 +38,9 @@ rect2=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lin
 rect3=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[0,-300] )
 
 listecondition=['G']
+
+# listecondition=['NG', 'NG', 'G', 'NG', 'G', 'G', 'NG', 'NG', 'C', 'G', 'G', 'C', 'C', 'C', 'G', 'C', 'NG', 'C', 'G', 'NG', 'C', 'NG', 'G', 'C', 'G', 'C', 'C', 'G', 'G', 'NG', 'NG', 'NG', 'G', 'C', 'C', 'NG', 'NG', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'C', 'G', 'C', 'C', 'C', 'G', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'G', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'NG', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'NG', 'G', 'G', 'NG', 'G', 'C', 'G', 'NG', 'C', 'NG', 'C', 'G', 'C', 'C', 'C', 'G', 'NG', 'G', 'G', 'G', 'NG', 'C', 'NG', 'NG', 'C', 'C', 'G', 'NG', 'C', 'G', 'C', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'G', 'NG', 'NG', 'G', 'C', 'G', 'NG', 'G']
+
 # listecondition = ['C', 'NG', 'G', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'G', 'C', 'G', 'NG', 'G', 'C', 'C', 'NG', 'G', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'NG', 'C', 'NG', 'C', 'C', 'NG', 'G', 'G', 'C', 'C', 'C', 'G', 'G', 'NG', 'NG', 'C', 'NG', 'C', 'C', 'G', 'C', 'C', 'NG', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'NG', 'G', 'G', 'G', 'C', 'C', 'C', 'NG', 'NG', 'NG', 'G', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'NG', 'G', 'G', 'G', 'C', 'NG', 'G', 'G']
 # listecondition = ['NG', 'C', 'G', 'C', 'C', 'NG', 'NG', 'G', 'NG', 'G', 'NG', 'G', 'G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'G', 'G', 'C', 'NG', 'C', 'C', 'G', 'C', 'NG', 'C', 'C', 'G', 'G', 'C', 'G', 'NG', 'C', 'NG', 'C', 'G', 'G', 'NG', 'G', 'NG', 'C', 'NG', 'C', 'NG', 'NG', 'G', 'NG', 'G', 'G', 'G', 'G', 'NG', 'NG', 'C', 'NG', 'C', 'G', 'NG', 'G', 'C', 'G', 'G', 'C', 'C', 'NG', 'C', 'NG', 'C', 'C', 'G', 'C', 'G', 'NG', 'C', 'NG', 'NG', 'NG', 'NG', 'C', 'G', 'G', 'C', 'NG', 'C', 'G', 'NG', 'G']
 #listecondition=['G', 'NG', 'G', 'NG', 'NG', 'C', 'G', 'G', 'NG', 'G', 'C', 'NG','NG', 'G', 'NG', 'C', 'C', 'G', 'G', 'NG', 'C', 'G', 'G', 'NG','NG', 'G', 'G', 'C', 'C', 'C', 'C', 'G', 'G', 'G', 'NG', 'G', 'C','G', 'G', 'C', 'G', 'NG', 'NG', 'NG', 'C', 'NG', 'C', 'G', 'G','C', 'C', 'C', 'NG', 'G', 'NG', 'C', 'C', 'C', 'G', 'C', 'NG', 'C','G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'NG', 'C', 'C', 'G', 'NG',
@@ -115,14 +120,13 @@ for i in range (1): #180
         rect2.draw()
         rect3.draw() 
        
-        # clock.reset()
         clock=core.Clock()
         win.flip()
         g=0
         keys=[]
         while g!=60:
             if g<=48:
-                cbleu.draw()
+                cbleuhaut.draw()
             rect.draw()
             rect1.draw()
             rect2.draw()
@@ -132,20 +136,11 @@ for i in range (1): #180
             ke=event.getKeys(keyList=['space'], timeStamped=clock)
             if ke != []:
                 keys.append(ke)
-            else:
-                keys.append([])
+            # else:
+            #     keys.append([])
         
-    keyss.append(keys) 
-        
-        # print(ke)
-        # print(ke[0][1])
-        # if ke==[]:
-        #     core.wait(0.8)
-        # elif ke[0][1]<0.8:
-        #     core.wait(0.8-(ke[0][1]))
-        # else:
-        #     core.wait(0.8)
-        listespace.append(ke)
+        keyss.append(keys) 
+        # listespace.append(ke)
 
         rect.draw()
         rect1.draw()
@@ -203,15 +198,12 @@ for i in range (1): #180
         win.flip()
         core.wait(0.2)
        
-    #    
-
         clock=core.Clock()
-        win.flip()
         g=0
         keys=[]
         while g!=60:
             if g<=48:
-                cbleu.draw()
+                crouge.draw()
             rect.draw()
             rect1.draw()
             rect2.draw()
@@ -221,11 +213,11 @@ for i in range (1): #180
             ke=event.getKeys(keyList=['space'], timeStamped=clock)
             if ke != []:
                 keys.append(ke)
-            else:
-                keys.append([])
-        print(key)
-        # core.wait(0.8)
-        listespace.append(key)
+            # else:
+            #     keys.append([])
+        
+        keyss.append(keys) 
+
 
         rect.draw()
         rect1.draw()
@@ -275,56 +267,41 @@ for i in range (1): #180
         rect3.draw()
         win.flip()
         core.wait(0.8)
-
         rect.draw()
         rect1.draw()
         rect2.draw()
         rect3.draw()
         win.flip()
         core.wait(0.2)
-
-        crouge.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
 
         clock=core.Clock()
-        win.flip()
-        keyss=event.waitKeys(maxWait=0.8, keyList=['space'], timeStamped=clock)
-        print(keyss)
-        # core.wait(0.8)
-        listespace.append(keyss)
+        g=0
+        keys=[]
+        while g!=60:
+            if g<=48:
+                crouge.draw()
+            rect.draw()
+            rect1.draw()
+            rect2.draw()
+            rect3.draw() 
+            win.flip()
+            g=g+1
+            ke=event.getKeys(keyList=['space'], timeStamped=clock)
+            if ke != []:
+                keys.append(ke)
+            # else:
+            #  keys.append([])
+        
+        keyss.append(keys) 
+
         rect.draw()
         rect1.draw()
         rect2.draw()
         rect3.draw()
         win.flip()
         core.wait(0.2)
-        # win.flip()
-        # core.wait(0.2)
-        # clock=core.Clock()
-        # print('1')
-        # for j in range(120):
-        #     print('2')
-        #     if j<=48:
-        #         print('3')
-        #         crouge.draw()
-                
-        #         rect.draw()
-        #         rect1.draw()
-        #         rect2.draw()
-        #         rect3.draw()
-        #         win.flip()
 
-        #         keys=event.getKeys(keyList=['space'], timeStamped=clock)
-        #         # keys=1
-        #     print('ok')
-        # # core.wait(5)
-         
-                    
-        # results=dict()
-        # for k in range(len(pos)):
+        
             
         #     results['Pos']=pos[k]
         #     results['Buttons']=buttonss[k]
@@ -336,7 +313,13 @@ for i in range (1): #180
 #AFFICHAGE FIN
 win.close()
 
-#%% TEST
+
+
+ #%%
+
+
+#%%
+# TEST
 
 from turtle import pos
 import psychopy
@@ -363,18 +346,29 @@ ke=event.getKeys(keyList=['space'], timeStamped=clock)
 print(ke)
 core.wait(5)
 win.close()
- # %%
+
+
+
+
+
+# %%
 import random
 
 #listecondition = ["C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG"]
 #listerandom = ["C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG"]
 #listecondition = ['C', 'NG', 'G', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'G', 'C', 'G', 'NG', 'G', 'C', 'C', 'NG', 'G', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'NG', 'C', 'NG', 'C', 'C', 'NG', 'G', 'G', 'C', 'C', 'C', 'G', 'G', 'NG', 'NG', 'C', 'NG', 'C', 'C', 'G', 'C', 'C', 'NG', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'NG', 'G', 'G', 'G', 'C', 'C', 'C', 'NG', 'NG', 'NG', 'G', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'NG', 'G', 'G', 'G', 'C', 'NG', 'G', 'G']
 #listecondition=['G', 'G', 'C', 'NG', 'C', 'C', 'NG', 'G', 'NG', 'G', 'G', 'NG', 'C', 'NG', 'C', 'C', 'NG', 'NG', 'C', 'C', 'G', 'C', 'C', 'C', 'G', 'NG', 'G', 'G', 'NG', 'NG', 'G', 'NG', 'G', 'C', 'NG', 'G', 'G', 'NG', 'C', 'NG', 'C', 'G', 'C', 'NG', 'C', 'C', 'G', 'C', 'C', 'G', 'NG', 'NG', 'C', 'G', 'NG', 'G', 'NG', 'C', 'C', 'G', 'NG', 'G', 'C', 'C', 'G', 'C', 'G', 'NG', 'NG', 'C', 'C', 'G', 'NG', 'NG', 'G', 'C', 'G', 'G', 'NG', 'NG', 'NG', 'G', 'C', 'G', 'C', 'G', 'NG', 'G', 'NG', 'NG']
-listecondition=['C', 'NG', 'C', 'NG', 'NG', 'C', 'C', 'NG', 'C', 'C', 'NG', 'NG', 'C', 'G', 'NG', 'NG', 'NG', 'NG', 'C', 'G', 'NG', 'C', 'C', 'C', 'G', 'NG', 'C', 'G', 'G', 'C', 'NG', 'NG', 'C', 'NG', 'NG', 'C', 'G', 'NG', 'NG', 'G', 'G', 'G', 'NG', 'NG', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'C', 'C', 'G', 'C', 'C', 'C', 'C', 'G', 'C', 'NG', 'C', 'G', 'NG', 'C', 'G', 'C', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'NG', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'G', 'G', 'NG', 'G', 'G', 'G', 'G', 'G']
-random.shuffle(listecondition)
-print (listecondition)
+# listecondition=['C', 'NG', 'C', 'NG', 'NG', 'C', 'C', 'NG', 'C', 'C', 'NG', 'NG', 'C', 'G', 'NG', 'NG', 'NG', 'NG', 'C', 'G', 'NG', 'C', 'C', 'C', 'G', 'NG', 'C', 'G', 'G', 'C', 'NG', 'NG', 'C', 'NG', 'NG', 'C', 'G', 'NG', 'NG', 'G', 'G', 'G', 'NG', 'NG', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'C', 'C', 'G', 'C', 'C', 'C', 'C', 'G', 'C', 'NG', 'C', 'G', 'NG', 'C', 'G', 'C', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'NG', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'G', 'G', 'NG', 'G', 'G', 'G', 'G', 'G']
+
+# listecondition=['NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C',]
+# random.shuffle(listecondition)
+# print (listecondition)
 
 #listecondition = ['C', 'NG', 'G', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'G', 'C', 'G', 'NG', 'G', 'C', 'C', 'NG', 'G', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'NG', 'C', 'NG', 'C', 'C', 'NG', 'G', 'G', 'C', 'C', 'C', 'G', 'G', 'NG', 'NG', 'C', 'NG', 'C', 'C', 'G', 'C', 'C', 'NG', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'NG', 'G', 'G', 'G', 'C', 'C', 'C', 'NG', 'NG', 'NG', 'G', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'NG', 'G', 'G', 'G', 'C', 'NG', 'G', 'G']
+listeshuffle=['NG', 'NG', 'G', 'NG', 'G', 'G', 'NG', 'NG', 'C', 'G', 'G', 'C', 'C', 'C', 'G', 'C', 'NG', 'C', 'G', 'NG', 'C', 'NG', 'G', 'C', 'G', 'C', 'C', 'G', 'G', 'NG', 'NG', 'NG', 'G', 'C', 'C', 'NG', 'NG', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'C', 'G', 'C', 'C', 'C', 'G', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'G', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'NG', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'NG', 'G', 'G', 'NG', 'G', 'C', 'G', 'NG', 'C', 'NG', 'C', 'G', 'C', 'C', 'C', 'G', 'NG', 'G', 'G', 'G', 'NG', 'C', 'NG', 'NG', 'C', 'C', 'G', 'NG', 'C', 'G', 'C', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'G', 'NG', 'NG', 'G', 'C', 'G', 'NG', 'G']
+print(len(listeshuffle))
+
+
 
 # %%
 

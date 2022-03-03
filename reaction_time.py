@@ -905,3 +905,10 @@ rect1.draw()
 win.flip()
 core.wait(0.3)
 win.close()
+
+
+#%%
+import scipy.io
+
+mat=scipy.io.loadmat("E:\Manip\Psych\psych\\results_gng_sub-test.mat")
+# %%

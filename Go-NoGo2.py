@@ -25,19 +25,26 @@ core.wait(0.5)
 
 #définition cercle bleu 
 cbleu=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None)
-cbleuhaut=visual.Circle(win, radius=50, edges=32, units='', pos=300,    lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None)
+cbleuhaut=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None, pos=[0,300])
+cbleubas=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None, pos=[0,-300])
+cbleugauche=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None, pos=[-300,0])
+cbleudroite=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None, pos=[300,0])
 
 
 #définition cercle rouge
 crouge=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='red', lineColorSpace='red',fillColor='red', fillColorSpace=None)
+crougehaut=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='red', lineColorSpace='red',fillColor='red', fillColorSpace=None, pos=[0,300])
+crougebas=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='red', lineColorSpace='red',fillColor='red', fillColorSpace=None, pos=[0,-300])
+crougegauche=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='red', lineColorSpace='red',fillColor='red', fillColorSpace=None, pos=[-300,0])
+crougedroite=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='red', lineColorSpace='red',fillColor='red', fillColorSpace=None, pos=[300,0])
 
 #définition des carrés
-rect=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[-300,0] )
-rect1=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[300,0] )
-rect2=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[0,300] )
-rect3=visual.Rect(win, width=100, height=100,fillColor="black", lineWidth=5, lineColor=[1, 1, 1],pos=[0,-300] )
-
-listecondition=['G']
+rect=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[-300,0] )
+rect1=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[300,0] )
+rect2=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[0,300] )
+rect3=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[0,-300] )
+listecondition=['GG']
+# listecondition=['GG','GD','GH','GB','NGG','NGD','NGH','NGB','CG','CD','CH','CB']
 
 # listecondition=['NG', 'NG', 'G', 'NG', 'G', 'G', 'NG', 'NG', 'C', 'G', 'G', 'C', 'C', 'C', 'G', 'C', 'NG', 'C', 'G', 'NG', 'C', 'NG', 'G', 'C', 'G', 'C', 'C', 'G', 'G', 'NG', 'NG', 'NG', 'G', 'C', 'C', 'NG', 'NG', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'C', 'G', 'C', 'C', 'C', 'G', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'G', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'NG', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'NG', 'G', 'G', 'NG', 'G', 'C', 'G', 'NG', 'C', 'NG', 'C', 'G', 'C', 'C', 'C', 'G', 'NG', 'G', 'G', 'G', 'NG', 'C', 'NG', 'NG', 'C', 'C', 'G', 'NG', 'C', 'G', 'C', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'G', 'NG', 'NG', 'G', 'C', 'G', 'NG', 'G']
 
@@ -56,6 +63,13 @@ for i in range (1): #180
     #initialisation sourie pas visible
     #mouse=event.Mouse(win=win, visible=False, newPos=[0,-350])
     mouse=event.Mouse(win=win, visible=False, newPos=[0,-350])
+    
+    rect.draw()
+    rect1.draw()
+    rect2.draw()
+    rect3.draw()
+    win.flip()
+    core.wait(2)
 
     #affichage croix blanche
     ligne=visual.Line(win, start=[-40,0], end=[40,0], lineColor="white", lineWidth=5)
@@ -68,11 +82,24 @@ for i in range (1): #180
     rect3.draw()
     win.flip()
     core.wait(2)
-    
-    
-    if k == 'G':
+    rect.draw()
+    rect1.draw()
+    rect2.draw()
+    rect3.draw()
+    win.flip()
+    core.wait(0.2)
+
+    #GO-NO-GO
+
+    if k == 'GG' or 'GD' or 'GH' or 'GB' or 'NGG' or 'NGD' or 'NGH' or 'NGB' or 'CG' or 'CD' or 'CH' or 'CB':
+        
         #AFFICHAGE CONDITION GO B-B-B-B
-        cbleu.draw()
+        if k== 'CG' or 'CD' or 'CH' or 'CB':
+            c=crouge
+        else :
+            c=cbleu
+        
+        c.draw()
         rect.draw()
         rect1.draw()
         rect2.draw()
@@ -86,7 +113,7 @@ for i in range (1): #180
         win.flip()
         core.wait(0.2)
 
-        cbleu.draw()
+        c.draw()
         rect.draw()
         rect1.draw()
         rect2.draw()
@@ -100,7 +127,7 @@ for i in range (1): #180
         win.flip()
         core.wait(0.2)
 
-        cbleu.draw()
+        c.draw()
         rect.draw()
         rect1.draw()
         rect2.draw()
@@ -113,20 +140,37 @@ for i in range (1): #180
         rect3.draw()
         win.flip()
         core.wait(0.2)
-
-        cbleu.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw() 
-       
+    
         clock=core.Clock()
-        win.flip()
         g=0
         keys=[]
+
         while g!=60:
             if g<=48:
-                cbleuhaut.draw()
+                if k == 'GH':
+                    cbleuhaut.draw()
+                if k == 'GB' :
+                    cbleubas.draw()
+                if k == 'GG':
+                    cbleugauche.draw()
+                if k == 'GD':
+                    cbleudroite.draw()
+                if k == 'NGD':
+                    crougedroite.draw()
+                if k == 'NGG':
+                    crougegauche.draw()
+                if k == 'NGH':
+                    crougehaut.draw()
+                if k == 'NGB':
+                    crougebas.draw()
+                if k == 'CD':
+                    crougedroite.draw()
+                if k == 'CG':
+                    crougegauche.draw()
+                if k == 'CH':
+                    crougehaut.draw()
+                if k == 'CB':
+                    crougebas.draw()
             rect.draw()
             rect1.draw()
             rect2.draw()
@@ -154,160 +198,162 @@ for i in range (1): #180
         # filename="results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
         # savemat(filename, results)
 
-    if k == 'C':
-        #AFFICHAGE CONDITION CONTROLE R-R-R-R
-        crouge.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.8)
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.2)
+    # if k == 'C':
+    #     #AFFICHAGE CONDITION CONTROLE R-R-R-R
+    #     crouge.draw()
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.8)
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.2)
 
-        crouge.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.8)
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.2)
+    #     crouge.draw()
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.8)
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.2)
 
-        crouge.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.8)
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.2)
+    #     crouge.draw()
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.8)
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.2)
        
-        clock=core.Clock()
-        g=0
-        keys=[]
-        while g!=60:
-            if g<=48:
-                crouge.draw()
-            rect.draw()
-            rect1.draw()
-            rect2.draw()
-            rect3.draw() 
-            win.flip()
-            g=g+1
-            ke=event.getKeys(keyList=['space'], timeStamped=clock)
-            if ke != []:
-                keys.append(ke)
-            # else:
-            #     keys.append([])
+    #     clock=core.Clock()
+    #     g=0
+    #     keys=[]
+    #     while g!=60:
+    #         if g<=48:
+    #             crouge.draw()
+    #         rect.draw()
+    #         rect1.draw()
+    #         rect2.draw()
+    #         rect3.draw() 
+    #         win.flip()
+    #         g=g+1
+    #         ke=event.getKeys(keyList=['space'], timeStamped=clock)
+    #         if ke != []:
+    #             keys.append(ke)
+    #         # else:
+    #         #     keys.append([])
         
-        keyss.append(keys) 
+    #     keyss.append(keys) 
 
 
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.2)
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.2)
 
-        # results=dict()
+    #     # results=dict()
         # filename="results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
         # savemat(filename, results)
 
-    if k == 'NG':
-        #AFFICHAGE CONDITION NO GO B-B-B-R
-        cbleu.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.8)
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.2)
+    # if k == 'NG':
+    #     #AFFICHAGE CONDITION NO GO B-B-B-R
+    #     cbleu.draw()
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.8)
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.2)
 
-        cbleu.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.8)
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.2)
+    #     cbleu.draw()
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.8)
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.2)
 
-        cbleu.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.8)
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.2)
+    #     cbleu.draw()
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.8)
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.2)
 
-        clock=core.Clock()
-        g=0
-        keys=[]
-        while g!=60:
-            if g<=48:
-                crouge.draw()
-            rect.draw()
-            rect1.draw()
-            rect2.draw()
-            rect3.draw() 
-            win.flip()
-            g=g+1
-            ke=event.getKeys(keyList=['space'], timeStamped=clock)
-            if ke != []:
-                keys.append(ke)
-            # else:
-            #  keys.append([])
+    #     clock=core.Clock()
+    #     g=0
+    #     keys=[]
+    #     while g!=60:
+    #         if g<=48:
+    #             crouge.draw()
+    #         rect.draw()
+    #         rect1.draw()
+    #         rect2.draw()
+    #         rect3.draw() 
+    #         win.flip()
+    #         g=g+1
+    #         ke=event.getKeys(keyList=['space'], timeStamped=clock)
+    #         if ke != []:
+    #             keys.append(ke)
+    #         # else:
+    #         #  keys.append([])
         
-        keyss.append(keys) 
+    #     keyss.append(keys) 
 
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.2)
+    #     rect.draw()
+    #     rect1.draw()
+    #     rect2.draw()
+    #     rect3.draw()
+    #     win.flip()
+    #     core.wait(0.2)
 
         
             
-        #     results['Pos']=pos[k]
+    #     #     results['Pos']=pos[k]
         #     results['Buttons']=buttonss[k]
         #     results['Times']=timess[k]
-        # filename="results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
-        # savemat(filename, results)
+        
+dicto=dict({sub:keyss})
+filename="results_gng_"+ sub + ".mat"
+savemat(filename, dicto)
 
 
 #AFFICHAGE FIN

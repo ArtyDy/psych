@@ -24,11 +24,11 @@ win.flip()
 core.wait(0.5)
 
 #définition cercle bleu 
-cbleu=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None)
-cbleuhaut=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None, pos=[0,300])
-cbleubas=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None, pos=[0,-300])
-cbleugauche=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None, pos=[-300,0])
-cbleudroite=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='aqua', fillColorSpace=None, pos=[300,0])
+cbleu=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='green', fillColorSpace=None)
+cbleuhaut=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='green', fillColorSpace=None, pos=[0,300])
+cbleubas=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='green', fillColorSpace=None, pos=[0,-300])
+cbleugauche=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='green', fillColorSpace=None, pos=[-300,0])
+cbleudroite=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='green', fillColorSpace=None, pos=[300,0])
 
 
 #définition cercle rouge
@@ -43,8 +43,8 @@ rect=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],po
 rect1=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[300,0] )
 rect2=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[0,300] )
 rect3=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[0,-300] )
-listecondition=['GG']
-# listecondition=['GG','GD','GH','GB','NGG','NGD','NGH','NGB','CG','CD','CH','CB']
+# listecondition=['GG']
+listecondition=['GG','NGG','GD','GH','NGD','GB','NGH','NGB','CG','CD','CH','CB']
 
 # listecondition=['NG', 'NG', 'G', 'NG', 'G', 'G', 'NG', 'NG', 'C', 'G', 'G', 'C', 'C', 'C', 'G', 'C', 'NG', 'C', 'G', 'NG', 'C', 'NG', 'G', 'C', 'G', 'C', 'C', 'G', 'G', 'NG', 'NG', 'NG', 'G', 'C', 'C', 'NG', 'NG', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'C', 'G', 'C', 'C', 'C', 'G', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'G', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'NG', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'NG', 'G', 'G', 'NG', 'G', 'C', 'G', 'NG', 'C', 'NG', 'C', 'G', 'C', 'C', 'C', 'G', 'NG', 'G', 'G', 'G', 'NG', 'C', 'NG', 'NG', 'C', 'C', 'G', 'NG', 'C', 'G', 'C', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'G', 'NG', 'NG', 'G', 'C', 'G', 'NG', 'G']
 
@@ -55,7 +55,7 @@ listecondition=['GG']
 listespace=[]
 keyss=[]
 
-for i in range (1): #180
+for i in range (12): #180
     print(i)
     print(listecondition[i])
     k=listecondition[i]
@@ -99,47 +99,47 @@ for i in range (1): #180
         else :
             c=cbleu
         
-        c.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.8)
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.2)
+        # c.draw()
+        # rect.draw()
+        # rect1.draw()
+        # rect2.draw()
+        # rect3.draw()
+        # win.flip()
+        # core.wait(0.8)
+        # rect.draw()
+        # rect1.draw()
+        # rect2.draw()
+        # rect3.draw()
+        # win.flip()
+        # core.wait(0.2)
 
-        c.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.8)
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.2)
+        # c.draw()
+        # rect.draw()
+        # rect1.draw()
+        # rect2.draw()
+        # rect3.draw()
+        # win.flip()
+        # core.wait(0.8)
+        # rect.draw()
+        # rect1.draw()
+        # rect2.draw()
+        # rect3.draw()
+        # win.flip()
+        # core.wait(0.2)
 
-        c.draw()
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.8)
-        rect.draw()
-        rect1.draw()
-        rect2.draw()
-        rect3.draw()
-        win.flip()
-        core.wait(0.2)
+        # c.draw()
+        # rect.draw()
+        # rect1.draw()
+        # rect2.draw()
+        # rect3.draw()
+        # win.flip()
+        # core.wait(0.8)
+        # rect.draw()
+        # rect1.draw()
+        # rect2.draw()
+        # rect3.draw()
+        # win.flip()
+        # core.wait(0.2)
     
         clock=core.Clock()
         g=0

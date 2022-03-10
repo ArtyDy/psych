@@ -39,7 +39,7 @@ cnds_len=range(len(cnds_order))
 
 # cnds_len=[0, 1]
 # cnds_order=shuffle(np.tile(range(18), 13))
-for k in cnds_len:
+for k in cnds_len[:5]:
     line1=visual.Line(win,start=[0, 50], end=[0, -50], lineWidth=5, lineColor="White")
     line2=visual.Line(win,start=[-50, 0], end=[50, 0], lineWidth=5, lineColor="White")
     line1.draw()

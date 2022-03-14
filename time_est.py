@@ -9,11 +9,20 @@ from pathlib import Path
 from psychopy.hardware import keyboard
 
 #%% one tap
-sub='sub-00test'
+sub='sub-00AD'
 
 kb=keyboard.Keyboard()
-conds=['400', '600', '800', '1000', '1200', '1400', '1600']
+# conds=['400', '600', '800', '1000', '1200', '1400', '1600']
 
+conds=['600', '1200', '1000', '800', '800', '1200', '1200', '600', '800',
+       '400', '1200', '1600', '1200', '400', '400', '600', '800', '600',
+       '400', '400', '1400', '600', '1000', '400', '1000', '1600', '800',
+       '1000', '1400', '1400', '1600', '1400', '1400', '600', '400',
+       '1200', '1600', '1200', '1000', '800', '600', '1600', '400',
+       '1000', '1600', '600', '400', '800', '1600', '1400', '800', '1200',
+       '1000', '1000', '1600', '1200', '400', '1400', '1400', '800',
+       '1200', '1000', '600', '1000', '1600', '800', '1400', '1400',
+       '600', '1600']
 win = psychopy.visual.Window(
     size=[400, 400],
     units="pix",
@@ -34,9 +43,9 @@ for cond in conds:
     ligne.draw()
     ligne1.draw()
     win.flip()
-    core.wait(1)
+    core.wait(1.5)
     win.flip()
-    core.wait(1)
+    core.wait(1.5)
     if cond=="400":
 
         rect.draw()
@@ -178,11 +187,19 @@ win.close()
 
 #%% tap length
 #                                                                                                                                                          # %%
-sub='sub-00test'
+sub='sub-00AD'
 
 kb=keyboard.Keyboard()
-conds=['400', '600', '800', '1000', '1200', '1400', '1600']
-
+# conds=['400', '600', '800', '1000', '1200', '1400', '1600']
+conds=['600', '1200', '1000', '800', '800', '1200', '1200', '600', '800',
+       '400', '1200', '1600', '1200', '400', '400', '600', '800', '600',
+       '400', '400', '1400', '600', '1000', '400', '1000', '1600', '800',
+       '1000', '1400', '1400', '1600', '1400', '1400', '600', '400',
+       '1200', '1600', '1200', '1000', '800', '600', '1600', '400',
+       '1000', '1600', '600', '400', '800', '1600', '1400', '800', '1200',
+       '1000', '1000', '1600', '1200', '400', '1400', '1400', '800',
+       '1200', '1000', '600', '1000', '1600', '800', '1400', '1400',
+       '600', '1600']
 win = psychopy.visual.Window(
     size=[400, 400],
     units="pix",
@@ -203,9 +220,9 @@ for cond in conds:
     ligne.draw()
     ligne1.draw()
     win.flip()
-    core.wait(1)
+    core.wait(1.5)
     win.flip()
-    core.wait(1)
+    core.wait(1.5)
     if cond=="400":
 
         rect.draw()
@@ -222,7 +239,7 @@ for cond in conds:
         core.wait(3)
         if 'space'in key:
             
-            keys.append(key)
+            keys.append(key[0].duration)
         if 'esc' in key:
             win.close()
     if cond=="600":
@@ -242,7 +259,7 @@ for cond in conds:
 
         if 'space'in key:
             
-            keys.append(key)
+            keys.append(key[0].duration)
         if 'esc' in key:
             win.close()
 
@@ -263,7 +280,7 @@ for cond in conds:
  
         if 'space'in key:
             
-            keys.append(key)
+            keys.append(key[0].duration)
         if 'esc' in key:
             win.close()
 
@@ -284,7 +301,7 @@ for cond in conds:
         
         if 'space'in key:
             
-            keys.append(key)
+            keys.append(key[0].duration)
         if 'esc' in key:
             win.close()
 
@@ -305,7 +322,7 @@ for cond in conds:
 
         if 'space'in key:
            
-            keys.append(key)
+            keys.append(key[0].duration)
         if 'esc' in key:
             win.close()
     if cond=="1400":
@@ -325,7 +342,7 @@ for cond in conds:
 
         if 'space'in key:
             
-            keys.append(key)
+            keys.append(key[0].duration)
         if 'esc' in key:
             win.close()
 
@@ -346,7 +363,7 @@ for cond in conds:
 
         if 'space'in key:
             
-            keys.append(key)
+            keys.append(key[0].duration)
         if 'esc' in key:
             win.close()
 filename='results_timerep_' + sub + '_taplen.mat'
@@ -354,4 +371,10 @@ results=dict({sub:keys})
 
 savemat(filename, results)
 win.close()
-                                                                                                                                                        # %%
+                                                                                                                                                             # %%
+#%%
+
+from scipy.io import loadmat
+
+mat=loadmat('results_timerep_sub-00test_onetap.mat')
+# %%

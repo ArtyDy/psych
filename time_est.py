@@ -9,7 +9,7 @@ from pathlib import Path
 from psychopy.hardware import keyboard
 
 #%% one tap
-sub='sub-00AD'
+sub='sub-test'
 
 kb=keyboard.Keyboard()
 # conds=['400', '600', '800', '1000', '1200', '1400', '1600']
@@ -187,7 +187,7 @@ win.close()
 
 #%% tap length
 #                                                                                                                                                          # %%
-sub='sub-00AD'
+sub='sub-test'
 
 kb=keyboard.Keyboard()
 # conds=['400', '600', '800', '1000', '1200', '1400', '1600']

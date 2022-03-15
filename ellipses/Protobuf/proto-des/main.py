@@ -1,3 +1,4 @@
+#%%
 import sys
 from typing import List, Any, Union
 import os
@@ -6,7 +7,7 @@ import path_pb2 as proto
 from google.protobuf.internal.decoder import _DecodeVarint32
 
 if __name__ == "__main__":
-    pathf = 'E:/Manip/FE/Ellipses/Analysis'
+    pathf = 'C:/Users/mathi/OneDrive/Documents/GitHub/psych/ellipses/results'
 
     filenames = os.listdir(pathf)
     for f in filenames:
@@ -51,3 +52,5 @@ if __name__ == "__main__":
             pos += next_pos
 
         output.close()
+
+# %%

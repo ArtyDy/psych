@@ -1,4 +1,5 @@
 #%%
+
 from turtle import pos
 import psychopy
 from psychopy import visual, core, event
@@ -24,11 +25,11 @@ win.flip()
 core.wait(0.5)
 
 #définition cercle bleu 
-cbleu=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='green', fillColorSpace=None)
-cbleuhaut=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='green', fillColorSpace=None, pos=[0,300])
-cbleubas=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='green', fillColorSpace=None, pos=[0,-300])
-cbleugauche=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='green', fillColorSpace=None, pos=[-300,0])
-cbleudroite=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='aqua', lineColorSpace='aqua',fillColor='green', fillColorSpace=None, pos=[300,0])
+cbleu=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='green', lineColorSpace='green',fillColor='green', fillColorSpace=None)
+cbleuhaut=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='green', lineColorSpace='green',fillColor='green', fillColorSpace=None, pos=[0,300])
+cbleubas=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='green', lineColorSpace='green',fillColor='green', fillColorSpace=None, pos=[0,-300])
+cbleugauche=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='green', lineColorSpace='green',fillColor='green', fillColorSpace=None, pos=[-300,0])
+cbleudroite=visual.Circle(win, radius=50, edges=32, units='', lineWidth=2.5, lineColor='green', lineColorSpace='green',fillColor='green', fillColorSpace=None, pos=[300,0])
 
 
 #définition cercle rouge
@@ -43,8 +44,10 @@ rect=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],po
 rect1=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[300,0] )
 rect2=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[0,300] )
 rect3=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[0,-300] )
-# listecondition=['GG']
-listecondition=['GG','NGG','GD','GH','NGD','GB','NGH','NGB','CG','CD','CH','CB']
+
+listecondition=['GG', 'GD', 'NGB', 'GG', 'NGG', 'GG', 'NGD', 'GH', 'NGB', 'GH', 'NGG', 'GH', 'NGH', 'GB', 'GH', 'GG', 'NGB', 'GB', 'NGH', 'GD', 'NGH', 'GH', 'NGH', 'NGG', 'GD', 'GD', 'GG', 'GG', 'NGG', 'GH', 'GD', 'GD', 'NGD', 'NGD', 'GH', 'NGB', 'NGB', 'NGG', 'NGB', 'NGB', 'GB', 'NGH', 'NGH', 'GG', 'GD', 'NGG', 'NGG', 'GB', 'NGB', 'NGH', 'NGG', 'NGB', 'NGD', 'NGG', 'GB', 'GH', 'NGD', 'GG', 'NGH', 'GG', 'NGB', 'NGB', 'GB', 'GG', 'NGB', 'GB', 'GH', 'GG', 'GH', 'NGD', 'GG', 'NGD', 'GD', 'GH', 'NGH', 'GG', 'NGH', 'NGD', 'NGD', 'NGG', 'NGD', 'GG', 'GH', 'GH', 'NGD', 'GD', 'NGG', 'NGH', 'GB', 'NGB', 'NGD', 'NGG', 'GB', 'NGG', 'NGD', 'NGD', 'NGH', 'GD', 'NGH', 'NGH', 'GG', 'GB', 'GG', 'GG', 'GH', 'GG', 'GB', 'GG', 'GB', 'NGB', 'NGD', 'GB', 'NGH', 'NGD', 'NGG', 'NGB', 'NGB', 'GB', 'NGH', 'NGB', 'NGG', 'NGG', 'GD', 'NGD', 'GB', 'GD', 'NGH', 'GD', 'NGG', 'GH', 'NGB', 'NGG', 'NGG', 'NGG', 'GH', 'GG', 'NGD', 'GG', 'GD', 'NGB', 'NGH', 'NGH', 'NGD', 'GB', 'NGG', 'GD', 'GB', 'GG', 'GH', 'GB', 'NGB', 'NGG', 'NGB', 'GH', 'GB', 'GD', 'GG', 'NGD', 'NGD', 'GD', 'GH', 'GD', 'GD', 'NGG', 'NGB', 'GD', 'NGB', 'GG', 'NGD', 'GG', 'NGH', 'GH', 'GG', 'GD', 'GD', 'GH', 'GH', 'GB', 'GB', 'GB', 'NGG', 'NGH', 'NGD', 'NGD', 'NGD', 'NGB', 'GB', 'GH', 'GD', 'GB', 'GB', 'GH', 'GD', 'GG', 'NGH', 'GH', 'GH', 'NGB', 'NGG', 'NGH', 'NGH', 'GD', 'NGG', 'GB', 'GB', 'NGG', 'GD', 'GG', 'NGG', 'NGG', 'NGD', 'GD', 'NGD', 'GG', 'NGH', 'GG', 'NGD', 'NGG', 'GB', 'GH', 'NGH', 'GB', 'GH', 'NGH', 'NGB', 'GD', 'GD', 'NGH', 'NGB', 'NGH', 'NGB', 'GD', 'NGH', 'GH', 'NGD', 'NGD', 'GB', 'NGB', 'GH', 'NGB']
+
+# listecondition=['GG','NGG','GD','GH','NGD','GB','NGH','NGB']
 
 # listecondition=['NG', 'NG', 'G', 'NG', 'G', 'G', 'NG', 'NG', 'C', 'G', 'G', 'C', 'C', 'C', 'G', 'C', 'NG', 'C', 'G', 'NG', 'C', 'NG', 'G', 'C', 'G', 'C', 'C', 'G', 'G', 'NG', 'NG', 'NG', 'G', 'C', 'C', 'NG', 'NG', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'C', 'G', 'C', 'C', 'C', 'G', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'G', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'NG', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'NG', 'G', 'G', 'NG', 'G', 'C', 'G', 'NG', 'C', 'NG', 'C', 'G', 'C', 'C', 'C', 'G', 'NG', 'G', 'G', 'G', 'NG', 'C', 'NG', 'NG', 'C', 'C', 'G', 'NG', 'C', 'G', 'C', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'G', 'NG', 'NG', 'G', 'C', 'G', 'NG', 'G']
 
@@ -55,13 +58,12 @@ listecondition=['GG','NGG','GD','GH','NGD','GB','NGH','NGB','CG','CD','CH','CB']
 listespace=[]
 keyss=[]
 
-for i in range (12): #180
+for i in range (240):
     print(i)
     print(listecondition[i])
     k=listecondition[i]
 
     #initialisation sourie pas visible
-    #mouse=event.Mouse(win=win, visible=False, newPos=[0,-350])
     mouse=event.Mouse(win=win, visible=False, newPos=[0,-350])
     
     rect.draw()
@@ -92,55 +94,11 @@ for i in range (12): #180
     #GO-NO-GO
 
     if k == 'GG' or 'GD' or 'GH' or 'GB' or 'NGG' or 'NGD' or 'NGH' or 'NGB' or 'CG' or 'CD' or 'CH' or 'CB':
-        
-        #AFFICHAGE CONDITION GO B-B-B-B
-        if k== 'CG' or 'CD' or 'CH' or 'CB':
+        if k== 'CG' or 'CD' or 'CH' or 'CB' or 'NGG' or 'NGD' or 'NGH' or 'NGB':
             c=crouge
         else :
             c=cbleu
         
-        # c.draw()
-        # rect.draw()
-        # rect1.draw()
-        # rect2.draw()
-        # rect3.draw()
-        # win.flip()
-        # core.wait(0.8)
-        # rect.draw()
-        # rect1.draw()
-        # rect2.draw()
-        # rect3.draw()
-        # win.flip()
-        # core.wait(0.2)
-
-        # c.draw()
-        # rect.draw()
-        # rect1.draw()
-        # rect2.draw()
-        # rect3.draw()
-        # win.flip()
-        # core.wait(0.8)
-        # rect.draw()
-        # rect1.draw()
-        # rect2.draw()
-        # rect3.draw()
-        # win.flip()
-        # core.wait(0.2)
-
-        # c.draw()
-        # rect.draw()
-        # rect1.draw()
-        # rect2.draw()
-        # rect3.draw()
-        # win.flip()
-        # core.wait(0.8)
-        # rect.draw()
-        # rect1.draw()
-        # rect2.draw()
-        # rect3.draw()
-        # win.flip()
-        # core.wait(0.2)
-    
         clock=core.Clock()
         g=0
         keys=[]
@@ -163,14 +121,14 @@ for i in range (12): #180
                     crougehaut.draw()
                 if k == 'NGB':
                     crougebas.draw()
-                if k == 'CD':
-                    crougedroite.draw()
-                if k == 'CG':
-                    crougegauche.draw()
-                if k == 'CH':
-                    crougehaut.draw()
-                if k == 'CB':
-                    crougebas.draw()
+                # if k == 'CD':
+                #     crougedroite.draw()
+                # if k == 'CG':
+                #     crougegauche.draw()
+                # if k == 'CH':
+                #     crougehaut.draw()
+                # if k == 'CB':
+                #     crougebas.draw()
             rect.draw()
             rect1.draw()
             rect2.draw()
@@ -193,160 +151,6 @@ for i in range (12): #180
         win.flip()
         core.wait(0.2)
 
-        # listespace.append(ke)
-        # results=dict()
-        # filename="results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
-        # savemat(filename, results)
-
-    # if k == 'C':
-    #     #AFFICHAGE CONDITION CONTROLE R-R-R-R
-    #     crouge.draw()
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.8)
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.2)
-
-    #     crouge.draw()
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.8)
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.2)
-
-    #     crouge.draw()
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.8)
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.2)
-       
-    #     clock=core.Clock()
-    #     g=0
-    #     keys=[]
-    #     while g!=60:
-    #         if g<=48:
-    #             crouge.draw()
-    #         rect.draw()
-    #         rect1.draw()
-    #         rect2.draw()
-    #         rect3.draw() 
-    #         win.flip()
-    #         g=g+1
-    #         ke=event.getKeys(keyList=['space'], timeStamped=clock)
-    #         if ke != []:
-    #             keys.append(ke)
-    #         # else:
-    #         #     keys.append([])
-        
-    #     keyss.append(keys) 
-
-
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.2)
-
-    #     # results=dict()
-        # filename="results_gng_"+ sub + "_" + str('%02d' % i) + ".mat"
-        # savemat(filename, results)
-
-    # if k == 'NG':
-    #     #AFFICHAGE CONDITION NO GO B-B-B-R
-    #     cbleu.draw()
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.8)
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.2)
-
-    #     cbleu.draw()
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.8)
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.2)
-
-    #     cbleu.draw()
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.8)
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.2)
-
-    #     clock=core.Clock()
-    #     g=0
-    #     keys=[]
-    #     while g!=60:
-    #         if g<=48:
-    #             crouge.draw()
-    #         rect.draw()
-    #         rect1.draw()
-    #         rect2.draw()
-    #         rect3.draw() 
-    #         win.flip()
-    #         g=g+1
-    #         ke=event.getKeys(keyList=['space'], timeStamped=clock)
-    #         if ke != []:
-    #             keys.append(ke)
-    #         # else:
-    #         #  keys.append([])
-        
-    #     keyss.append(keys) 
-
-    #     rect.draw()
-    #     rect1.draw()
-    #     rect2.draw()
-    #     rect3.draw()
-    #     win.flip()
-    #     core.wait(0.2)
-
-        
-            
     #     #     results['Pos']=pos[k]
         #     results['Buttons']=buttonss[k]
         #     results['Times']=timess[k]
@@ -359,12 +163,10 @@ savemat(filename, dicto)
 #AFFICHAGE FIN
 win.close()
 
-
-
  #%%
 
 
-#%%
+ #%%
 # TEST
 
 from turtle import pos
@@ -407,12 +209,15 @@ import random
 # listecondition=['C', 'NG', 'C', 'NG', 'NG', 'C', 'C', 'NG', 'C', 'C', 'NG', 'NG', 'C', 'G', 'NG', 'NG', 'NG', 'NG', 'C', 'G', 'NG', 'C', 'C', 'C', 'G', 'NG', 'C', 'G', 'G', 'C', 'NG', 'NG', 'C', 'NG', 'NG', 'C', 'G', 'NG', 'NG', 'G', 'G', 'G', 'NG', 'NG', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'C', 'C', 'G', 'C', 'C', 'C', 'C', 'G', 'C', 'NG', 'C', 'G', 'NG', 'C', 'G', 'C', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'NG', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'G', 'G', 'NG', 'G', 'G', 'G', 'G', 'G']
 
 # listecondition=['NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C','NG','G','C',]
-# random.shuffle(listecondition)
 # print (listecondition)
 
 #listecondition = ['C', 'NG', 'G', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'G', 'C', 'G', 'NG', 'G', 'C', 'C', 'NG', 'G', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'NG', 'C', 'NG', 'C', 'C', 'NG', 'G', 'G', 'C', 'C', 'C', 'G', 'G', 'NG', 'NG', 'C', 'NG', 'C', 'C', 'G', 'C', 'C', 'NG', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'NG', 'G', 'G', 'G', 'C', 'C', 'C', 'NG', 'NG', 'NG', 'G', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'NG', 'G', 'G', 'G', 'C', 'NG', 'G', 'G']
-listeshuffle=['NG', 'NG', 'G', 'NG', 'G', 'G', 'NG', 'NG', 'C', 'G', 'G', 'C', 'C', 'C', 'G', 'C', 'NG', 'C', 'G', 'NG', 'C', 'NG', 'G', 'C', 'G', 'C', 'C', 'G', 'G', 'NG', 'NG', 'NG', 'G', 'C', 'C', 'NG', 'NG', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'C', 'G', 'C', 'C', 'C', 'G', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'G', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'NG', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'NG', 'G', 'G', 'NG', 'G', 'C', 'G', 'NG', 'C', 'NG', 'C', 'G', 'C', 'C', 'C', 'G', 'NG', 'G', 'G', 'G', 'NG', 'C', 'NG', 'NG', 'C', 'C', 'G', 'NG', 'C', 'G', 'C', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'G', 'NG', 'NG', 'G', 'C', 'G', 'NG', 'G']
-print(len(listeshuffle))
+listecondition=['GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB','GG','GD','GH','GB','NGD','NGG','NGH','NGB']
+random.shuffle(listecondition)
+print(listecondition)
+#30 / cond
+# listeshuffle=['NG', 'NG', 'G', 'NG', 'G', 'G', 'NG', 'NG', 'C', 'G', 'G', 'C', 'C', 'C', 'G', 'C', 'NG', 'C', 'G', 'NG', 'C', 'NG', 'G', 'C', 'G', 'C', 'C', 'G', 'G', 'NG', 'NG', 'NG', 'G', 'C', 'C', 'NG', 'NG', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'C', 'G', 'C', 'C', 'C', 'G', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'G', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'NG', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'NG', 'G', 'G', 'NG', 'G', 'C', 'G', 'NG', 'C', 'NG', 'C', 'G', 'C', 'C', 'C', 'G', 'NG', 'G', 'G', 'G', 'NG', 'C', 'NG', 'NG', 'C', 'C', 'G', 'NG', 'C', 'G', 'C', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'G', 'NG', 'NG', 'G', 'C', 'G', 'NG', 'G']
+# print(len(listeshuffle))
 
 
 

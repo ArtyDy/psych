@@ -3,7 +3,7 @@
 import scipy.io
 
 
-sub='sub-22ML'
+sub='sub-00AD'
 datapath= sub + '/' + 'results_timerep_' + sub+'_taplen'+'.mat'
 mat=scipy.io.loadmat(datapath)
 
@@ -27,14 +27,14 @@ for i in listecond:
 for cond, j in zip (conds, range (len(conds))) :
     for c in listecond :
         if c==cond :
-            data[c]['essai'+ str(j)]=mat[sub][:,1][j]
+            data[c]['essai'+ str(j)]=mat[sub][0][j]
             
 
 
 # %% Excel
 import csv
 
-name = 'results_onetap_'+ sub + '.csv'
+name = 'results_taplen_'+ sub + '.csv'
 nbparcond=10
 
 with open(name, 'w', newline ='') as file2:

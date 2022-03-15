@@ -8,8 +8,8 @@ import random
 from pathlib import Path
 
 sub='sub-test'
-dir ="/" + sub
-Path(dir).mkdir(parents=True, exist_ok=True)
+# dir ="/" + sub
+# Path(dir).mkdir(parents=True, exist_ok=True)
 
 # défini windows
 win = psychopy.visual.Window(
@@ -58,7 +58,7 @@ listecondition=['GG', 'GD', 'NGB', 'GG', 'NGG', 'GG', 'NGD', 'GH', 'NGB', 'GH', 
 listespace=[]
 keyss=[]
 
-for i in range (240):
+for i in range (2):
     print(i)
     print(listecondition[i])
     k=listecondition[i]
@@ -163,10 +163,10 @@ savemat(filename, dicto)
 #AFFICHAGE FIN
 win.close()
 
- #%%
+  #%%
 
 
- #%%
+#%%
 # TEST
 
 from turtle import pos
@@ -199,7 +199,7 @@ win.close()
 
 
 
-# %%
+   # %%
 import random
 
 #listecondition = ["C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG"]

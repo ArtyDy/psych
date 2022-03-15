@@ -3,13 +3,16 @@
 from turtle import pos
 import psychopy
 from psychopy import visual, core, event
+from psychopy.hardware import keyboard
 from scipy.io import savemat
 import random
 from pathlib import Path
+import os
 
+kb=keyboard.Keyboard()
 sub='sub-test'
-dir ="/" + sub
-Path(dir).mkdir(parents=True, exist_ok=True)
+# dir ="/" + sub
+# Path(dir).mkdir(parents=True, exist_ok=True)
 
 # défini windows
 win = psychopy.visual.Window(
@@ -58,7 +61,7 @@ listetemps=[0.2, 1,]
 listespace=[]
 keyss=[]
 
-for i in range (2):#240
+for i in range (len(listecondition)):#240
     print(i)
     print(listecondition[i])
     k=listecondition[i]
@@ -93,13 +96,13 @@ for i in range (2):#240
 
     #GO-NO-GO
 
-    if k == 'GG' or 'GD' or 'GH' or 'GB' or 'NGG' or 'NGD' or 'NGH' or 'NGB' or 'CG' or 'CD' or 'CH' or 'CB':
-        if k== 'CG' or 'CD' or 'CH' or 'CB' or 'NGG' or 'NGD' or 'NGH' or 'NGB':
+    if k == 'GG' or k =='GD' or k =='GH' or k =='GB' or k =='NGG' or k =='NGD' or k =='NGH' or k =='NGB' or k =='CG' or k =='CD' or k =='CH' or k =='CB':
+        if k== 'CG' or k =='CD' or k =='CH' or k =='CB' or k =='NGG' or k =='NGD' or k =='NGH' or k =='NGB':
             c=crouge
         else :
             c=cbleu
         
-        clock=core.Clock()
+        clock.reset()
         g=0
         keys=[]
 
@@ -128,9 +131,12 @@ for i in range (2):#240
             rect3.draw() 
             win.flip()
             g=g+1
-            ke=event.getKeys(keyList=['space'], timeStamped=clock)
-            if ke != []:
-                keys.append(ke)
+            ke=kb.getKeys(keyList=['space'])
+            if ke:
+                keys.append(['space', g/60])
+                
+        # dicto=dict({'Essai'+ str(i):keys})
+        # savemat('caca_'+ str(i), dicto)
         keyss.append(keys) 
 
         rect.draw()
@@ -141,100 +147,102 @@ for i in range (2):#240
         core.wait(0.2)
 
 dicto=dict({sub:keyss})
-filename="results_gng_"+ sub + ".mat"
+filename='E:/Manip/Psych/psych/results_gng_'+ sub + '.mat'
 savemat(filename, dicto)
-
+ 
 
 #AFFICHAGE FIN
 win.close()
+  #%%
+# #%%
+# import random
+
+# listecondition=[]
+# listetemps=[]
+# # liste=[,'GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8']
+# liste=['GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8']
+# random.shuffle(liste)
+
+# for i in liste :
+#     if i == 'GD2' :
+#         listecondition.append('GD')
+#         listetemps.append(0.2)
+#     if i == 'GD5' :
+#         listecondition.append('GD')
+#         listetemps.append(0.5)
+#     if i == 'GD8' :
+#         listecondition.append('GD')
+#         listetemps.append(0.8)
+#     if i == 'GG2' :
+#         listecondition.append('GG')
+#         listetemps.append(0.2)
+#     if i == 'GG5' :
+#         listecondition.append('GG')
+#         listetemps.append(0.5)
+#     if i == 'GG8' :
+#         listecondition.append('GG')
+#         listetemps.append(0.8)
+#     if i == 'GH2' :
+#         listecondition.append('GH')
+#         listetemps.append(0.2)
+#     if i == 'GH5' :
+#         listecondition.append('GH')
+#         listetemps.append(0.5)
+#     if i == 'GH8' :
+#         listecondition.append('GH')
+#         listetemps.append(0.8)
+#     if i == 'GB2' :
+#         listecondition.append('GB')
+#         listetemps.append(0.2)
+#     if i == 'GB5' :
+#         listecondition.append('GB')
+#         listetemps.append(0.5)
+#     if i == 'GB8' :
+#         listecondition.append('GB')
+#         listetemps.append(0.8)
+#     #NG----
+#     if i == 'NGD2' :
+#         listecondition.append('NGD')
+#         listetemps.append(0.2)
+#     if i == 'NGD5' :
+#         listecondition.append('NGD')
+#         listetemps.append(0.5)
+#     if i == 'NGD8' :
+#         listecondition.append('NGD')
+#         listetemps.append(0.8)
+#     if i == 'NGG2' :
+#         listecondition.append('NGG')
+#         listetemps.append(0.2)
+#     if i == 'NGG5' :
+#         listecondition.append('NGG')
+#         listetemps.append(0.5)
+#     if i == 'NGG8' :
+#         listecondition.append('NGG')
+#         listetemps.append(0.8)
+#     if i == 'NGH2' :
+#         listecondition.append('NGH')
+#         listetemps.append(0.2)
+#     if i == 'NGH5' :
+#         listecondition.append('NGH')
+#         listetemps.append(0.5)
+#     if i == 'NGH8' :
+#         listecondition.append('NGH')
+#         listetemps.append(0.8)
+#     if i == 'NGB2' :
+#         listecondition.append('NGB')
+#         listetemps.append(0.2)
+#     if i == 'NGB5' :
+#         listecondition.append('NGB')
+#         listetemps.append(0.5)
+#     if i == 'NGB8' :
+#         listecondition.append('NGB')
+#         listetemps.append(0.8)
 
 
-     #%%
-import random
+# print(listecondition)
+# print(listetemps)
 
-listecondition=[]
-listetemps=[]
-# liste=[,'GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8']
-liste=['GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8','GD2','GD5','GD8','GG2','GG5','GG8','GH2','GH5','GH8','GB2','GB5','GB8','NGD2','NGD5','NGD8','NGG2','NGG5','NGG8','NGH2','NGH5','NGH8','NGB2','NGB5','NGB8']
-random.shuffle(liste)
+#                                                                                                                                                                                                                                                              # %%
 
-for i in liste :
-    if i == 'GD2' :
-        listecondition.append('GD')
-        listetemps.append(0.2)
-    if i == 'GD5' :
-        listecondition.append('GD')
-        listetemps.append(0.5)
-    if i == 'GD8' :
-        listecondition.append('GD')
-        listetemps.append(0.8)
-    if i == 'GG2' :
-        listecondition.append('GG')
-        listetemps.append(0.2)
-    if i == 'GG5' :
-        listecondition.append('GG')
-        listetemps.append(0.5)
-    if i == 'GG8' :
-        listecondition.append('GG')
-        listetemps.append(0.8)
-    if i == 'GH2' :
-        listecondition.append('GH')
-        listetemps.append(0.2)
-    if i == 'GH5' :
-        listecondition.append('GH')
-        listetemps.append(0.5)
-    if i == 'GH8' :
-        listecondition.append('GH')
-        listetemps.append(0.8)
-    if i == 'GB2' :
-        listecondition.append('GB')
-        listetemps.append(0.2)
-    if i == 'GB5' :
-        listecondition.append('GB')
-        listetemps.append(0.5)
-    if i == 'GB8' :
-        listecondition.append('GB')
-        listetemps.append(0.8)
-    #NG----
-    if i == 'NGD2' :
-        listecondition.append('NGD')
-        listetemps.append(0.2)
-    if i == 'NGD5' :
-        listecondition.append('NGD')
-        listetemps.append(0.5)
-    if i == 'NGD8' :
-        listecondition.append('NGD')
-        listetemps.append(0.8)
-    if i == 'NGG2' :
-        listecondition.append('NGG')
-        listetemps.append(0.2)
-    if i == 'NGG5' :
-        listecondition.append('NGG')
-        listetemps.append(0.5)
-    if i == 'NGG8' :
-        listecondition.append('NGG')
-        listetemps.append(0.8)
-    if i == 'NGH2' :
-        listecondition.append('NGH')
-        listetemps.append(0.2)
-    if i == 'NGH5' :
-        listecondition.append('NGH')
-        listetemps.append(0.5)
-    if i == 'NGH8' :
-        listecondition.append('NGH')
-        listetemps.append(0.8)
-    if i == 'NGB2' :
-        listecondition.append('NGB')
-        listetemps.append(0.2)
-    if i == 'NGB5' :
-        listecondition.append('NGB')
-        listetemps.append(0.5)
-    if i == 'NGB8' :
-        listecondition.append('NGB')
-        listetemps.append(0.8)
-
-
-print(listecondition)
-print(listetemps)
-
-    # %%
+     # %%
+  

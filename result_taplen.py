@@ -3,7 +3,7 @@
 import scipy.io
 
 
-sub='sub-00AD'
+sub='sub-02PC'
 datapath= sub + '/' + 'results_timerep_' + sub+'_taplen'+'.mat'
 mat=scipy.io.loadmat(datapath)
 

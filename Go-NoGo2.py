@@ -8,8 +8,8 @@ import random
 from pathlib import Path
 
 sub='sub-test'
-# dir ="/" + sub
-# Path(dir).mkdir(parents=True, exist_ok=True)
+dir ="/" + sub
+Path(dir).mkdir(parents=True, exist_ok=True)
 
 # défini windows
 win = psychopy.visual.Window(
@@ -45,9 +45,9 @@ rect1=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],p
 rect2=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[0,300] )
 rect3=visual.Rect(win, width=100, height=100, lineWidth=5, lineColor=[1, 1, 1],pos=[0,-300] )
 
-listecondition=['GG', 'GD', 'NGB', 'GG', 'NGG', 'GG', 'NGD', 'GH', 'NGB', 'GH', 'NGG', 'GH', 'NGH', 'GB', 'GH', 'GG', 'NGB', 'GB', 'NGH', 'GD', 'NGH', 'GH', 'NGH', 'NGG', 'GD', 'GD', 'GG', 'GG', 'NGG', 'GH', 'GD', 'GD', 'NGD', 'NGD', 'GH', 'NGB', 'NGB', 'NGG', 'NGB', 'NGB', 'GB', 'NGH', 'NGH', 'GG', 'GD', 'NGG', 'NGG', 'GB', 'NGB', 'NGH', 'NGG', 'NGB', 'NGD', 'NGG', 'GB', 'GH', 'NGD', 'GG', 'NGH', 'GG', 'NGB', 'NGB', 'GB', 'GG', 'NGB', 'GB', 'GH', 'GG', 'GH', 'NGD', 'GG', 'NGD', 'GD', 'GH', 'NGH', 'GG', 'NGH', 'NGD', 'NGD', 'NGG', 'NGD', 'GG', 'GH', 'GH', 'NGD', 'GD', 'NGG', 'NGH', 'GB', 'NGB', 'NGD', 'NGG', 'GB', 'NGG', 'NGD', 'NGD', 'NGH', 'GD', 'NGH', 'NGH', 'GG', 'GB', 'GG', 'GG', 'GH', 'GG', 'GB', 'GG', 'GB', 'NGB', 'NGD', 'GB', 'NGH', 'NGD', 'NGG', 'NGB', 'NGB', 'GB', 'NGH', 'NGB', 'NGG', 'NGG', 'GD', 'NGD', 'GB', 'GD', 'NGH', 'GD', 'NGG', 'GH', 'NGB', 'NGG', 'NGG', 'NGG', 'GH', 'GG', 'NGD', 'GG', 'GD', 'NGB', 'NGH', 'NGH', 'NGD', 'GB', 'NGG', 'GD', 'GB', 'GG', 'GH', 'GB', 'NGB', 'NGG', 'NGB', 'GH', 'GB', 'GD', 'GG', 'NGD', 'NGD', 'GD', 'GH', 'GD', 'GD', 'NGG', 'NGB', 'GD', 'NGB', 'GG', 'NGD', 'GG', 'NGH', 'GH', 'GG', 'GD', 'GD', 'GH', 'GH', 'GB', 'GB', 'GB', 'NGG', 'NGH', 'NGD', 'NGD', 'NGD', 'NGB', 'GB', 'GH', 'GD', 'GB', 'GB', 'GH', 'GD', 'GG', 'NGH', 'GH', 'GH', 'NGB', 'NGG', 'NGH', 'NGH', 'GD', 'NGG', 'GB', 'GB', 'NGG', 'GD', 'GG', 'NGG', 'NGG', 'NGD', 'GD', 'NGD', 'GG', 'NGH', 'GG', 'NGD', 'NGG', 'GB', 'GH', 'NGH', 'GB', 'GH', 'NGH', 'NGB', 'GD', 'GD', 'NGH', 'NGB', 'NGH', 'NGB', 'GD', 'NGH', 'GH', 'NGD', 'NGD', 'GB', 'NGB', 'GH', 'NGB']
+# listecondition=['GG', 'GD', 'NGB', 'GG', 'NGG', 'GG', 'NGD', 'GH', 'NGB', 'GH', 'NGG', 'GH', 'NGH', 'GB', 'GH', 'GG', 'NGB', 'GB', 'NGH', 'GD', 'NGH', 'GH', 'NGH', 'NGG', 'GD', 'GD', 'GG', 'GG', 'NGG', 'GH', 'GD', 'GD', 'NGD', 'NGD', 'GH', 'NGB', 'NGB', 'NGG', 'NGB', 'NGB', 'GB', 'NGH', 'NGH', 'GG', 'GD', 'NGG', 'NGG', 'GB', 'NGB', 'NGH', 'NGG', 'NGB', 'NGD', 'NGG', 'GB', 'GH', 'NGD', 'GG', 'NGH', 'GG', 'NGB', 'NGB', 'GB', 'GG', 'NGB', 'GB', 'GH', 'GG', 'GH', 'NGD', 'GG', 'NGD', 'GD', 'GH', 'NGH', 'GG', 'NGH', 'NGD', 'NGD', 'NGG', 'NGD', 'GG', 'GH', 'GH', 'NGD', 'GD', 'NGG', 'NGH', 'GB', 'NGB', 'NGD', 'NGG', 'GB', 'NGG', 'NGD', 'NGD', 'NGH', 'GD', 'NGH', 'NGH', 'GG', 'GB', 'GG', 'GG', 'GH', 'GG', 'GB', 'GG', 'GB', 'NGB', 'NGD', 'GB', 'NGH', 'NGD', 'NGG', 'NGB', 'NGB', 'GB', 'NGH', 'NGB', 'NGG', 'NGG', 'GD', 'NGD', 'GB', 'GD', 'NGH', 'GD', 'NGG', 'GH', 'NGB', 'NGG', 'NGG', 'NGG', 'GH', 'GG', 'NGD', 'GG', 'GD', 'NGB', 'NGH', 'NGH', 'NGD', 'GB', 'NGG', 'GD', 'GB', 'GG', 'GH', 'GB', 'NGB', 'NGG', 'NGB', 'GH', 'GB', 'GD', 'GG', 'NGD', 'NGD', 'GD', 'GH', 'GD', 'GD', 'NGG', 'NGB', 'GD', 'NGB', 'GG', 'NGD', 'GG', 'NGH', 'GH', 'GG', 'GD', 'GD', 'GH', 'GH', 'GB', 'GB', 'GB', 'NGG', 'NGH', 'NGD', 'NGD', 'NGD', 'NGB', 'GB', 'GH', 'GD', 'GB', 'GB', 'GH', 'GD', 'GG', 'NGH', 'GH', 'GH', 'NGB', 'NGG', 'NGH', 'NGH', 'GD', 'NGG', 'GB', 'GB', 'NGG', 'GD', 'GG', 'NGG', 'NGG', 'NGD', 'GD', 'NGD', 'GG', 'NGH', 'GG', 'NGD', 'NGG', 'GB', 'GH', 'NGH', 'GB', 'GH', 'NGH', 'NGB', 'GD', 'GD', 'NGH', 'NGB', 'NGH', 'NGB', 'GD', 'NGH', 'GH', 'NGD', 'NGD', 'GB', 'NGB', 'GH', 'NGB']
 
-# listecondition=['GG','NGG','GD','GH','NGD','GB','NGH','NGB']
+listecondition=['GG','NGG','GD','GH','NGD','GB','NGH','NGB']
 
 # listecondition=['NG', 'NG', 'G', 'NG', 'G', 'G', 'NG', 'NG', 'C', 'G', 'G', 'C', 'C', 'C', 'G', 'C', 'NG', 'C', 'G', 'NG', 'C', 'NG', 'G', 'C', 'G', 'C', 'C', 'G', 'G', 'NG', 'NG', 'NG', 'G', 'C', 'C', 'NG', 'NG', 'G', 'NG', 'NG', 'G', 'NG', 'C', 'C', 'G', 'C', 'C', 'C', 'G', 'C', 'G', 'NG', 'C', 'G', 'G', 'NG', 'C', 'C', 'G', 'G', 'G', 'C', 'C', 'NG', 'C', 'NG', 'C', 'NG', 'G', 'C', 'NG', 'NG', 'NG', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'NG', 'G', 'G', 'NG', 'G', 'C', 'C', 'NG', 'C', 'NG', 'G', 'G', 'NG', 'G', 'C', 'G', 'NG', 'C', 'NG', 'C', 'G', 'C', 'C', 'C', 'G', 'NG', 'G', 'G', 'G', 'NG', 'C', 'NG', 'NG', 'C', 'C', 'G', 'NG', 'C', 'G', 'C', 'NG', 'G', 'C', 'NG', 'G', 'NG', 'C', 'C', 'G', 'NG', 'NG', 'G', 'C', 'G', 'NG', 'G']
 
@@ -58,7 +58,7 @@ listecondition=['GG', 'GD', 'NGB', 'GG', 'NGG', 'GG', 'NGD', 'GH', 'NGB', 'GH', 
 listespace=[]
 keyss=[]
 
-for i in range (2):
+for i in range (240):
     print(i)
     print(listecondition[i])
     k=listecondition[i]
@@ -163,10 +163,10 @@ savemat(filename, dicto)
 #AFFICHAGE FIN
 win.close()
 
-  #%%
+ #%%
 
 
-#%%
+ #%%
 # TEST
 
 from turtle import pos
@@ -199,7 +199,7 @@ win.close()
 
 
 
-   # %%
+  # %%
 import random
 
 #listecondition = ["C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","C","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG","NG"]

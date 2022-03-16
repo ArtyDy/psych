@@ -11,7 +11,7 @@ from psychopy.hardware import keyboard
 
 #%% tap length
 #                                                                                                                                                          # %%
-sub='sub-test'
+sub='sub-02PC'
 
 kb=keyboard.Keyboard()
 conds=['600', '1200', '1000', '800', '800', '1200', '1200', '600', '800',
@@ -23,8 +23,8 @@ conds=['600', '1200', '1000', '800', '800', '1200', '1200', '600', '800',
        '1000', '1000', '1600', '1200', '400', '1400', '1400', '800',
        '1200', '1000', '600', '1000', '1600', '800', '1400', '1400',
        '600', '1600']
-conds=['400', '600', '800', '1000', '1200', '1400', '1600']
-conds=['400']
+# conds=['400', '600', '800', '1000', '1200', '1400', '1600']
+# conds=['400', '600', '800', '1000']
 win = psychopy.visual.Window(
     size=[400, 400],
     units="pix",
@@ -32,7 +32,7 @@ win = psychopy.visual.Window(
     color="black",
     screen=1
 )
-rect=visual.Circle(win, radius=100,fillColor="white", lineWidth=5, lineColor=[1, 1, 1],pos=[0,0] )
+rect=visual.Circle(win, radius=100,fillColor="grey", lineWidth=5, lineColor="grey",pos=[0,0] )
 
 keys=[]
 clock=core.Clock()
@@ -196,7 +196,7 @@ results=dict({sub:keys})
 
 savemat(filename, results)
 win.close()
-                                                                                                                                                             # %%
+                                                                                                                                                                # %%
 #%%
 
 from scipy.io import loadmat

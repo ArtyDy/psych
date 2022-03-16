@@ -65,8 +65,9 @@ for cond in conds:
         if 'space'in key:
             
             keys.append(key[0].duration)
-        if 'esc' in key:
+        if 'escape' in key:
             win.close()
+            core.quit()
     if cond=="600":
 
         rect.draw()
@@ -85,8 +86,9 @@ for cond in conds:
         if 'space'in key:
             
             keys.append(key[0].duration)
-        if 'esc' in key:
+        if 'escape' in key:
             win.close()
+            core.quit()
 
     if cond=="800":
 
@@ -106,8 +108,9 @@ for cond in conds:
         if 'space'in key:
             
             keys.append(key[0].duration)
-        if 'esc' in key:
+        if 'escape' in key:
             win.close()
+            core.quit()
 
     if cond=="1000":
 
@@ -127,8 +130,9 @@ for cond in conds:
         if 'space'in key:
             
             keys.append(key[0].duration)
-        if 'esc' in key:
+        if 'escape' in key:
             win.close()
+            core.quit()
 
     if cond=="1200":
 
@@ -148,8 +152,9 @@ for cond in conds:
         if 'space'in key:
            
             keys.append(key[0].duration)
-        if 'esc' in key:
+        if 'escape' in key:
             win.close()
+            core.quit()
     if cond=="1400":
 
         rect.draw()
@@ -168,8 +173,9 @@ for cond in conds:
         if 'space'in key:
             
             keys.append(key[0].duration)
-        if 'esc' in key:
+        if 'escape' in key:
             win.close()
+            core.quit()
 
     if cond=="1600":
 
@@ -189,8 +195,9 @@ for cond in conds:
         if 'space'in key:
             
             keys.append(key[0].duration)
-        if 'esc' in key:
+        if 'escape' in key:
             win.close()
+            core.quit()
 filename='E:/Manip/Psych/psych/results_timerep_' + sub + '_taplen.mat'
 results=dict({sub:keys})
 

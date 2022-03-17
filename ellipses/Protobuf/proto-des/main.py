@@ -9,7 +9,7 @@ import google
 
 
 if __name__ == "__main__":
-    pathf = 'E:/Manip/Psych/psych/ellipses/results'
+    pathf = 'C:/Users/mathi/OneDrive/Documents/GitHub/psych/ellipses/results'
 
     filenames = os.listdir(pathf)
     for f in filenames:
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
         aaa = f.split('.')
 
-        output = open('E:/Manip/FE/Ellipses/output/'+aaa[0]+'.txt', 'w')
+        output = open('C:/Users/mathi/OneDrive/Documents/GitHub/psych/ellipses/Texts/'+aaa[0]+'.txt', 'w')
 
 
         next_pos, pos = 0, 0

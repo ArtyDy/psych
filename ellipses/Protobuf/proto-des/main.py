@@ -5,9 +5,11 @@ import os
 
 import path_pb2 as proto
 from google.protobuf.internal.decoder import _DecodeVarint32
+import google
+
 
 if __name__ == "__main__":
-    pathf = 'C:/Users/mathi/OneDrive/Documents/GitHub/psych/ellipses/results'
+    pathf = 'E:/Manip/Psych/psych/ellipses/results'
 
     filenames = os.listdir(pathf)
     for f in filenames:

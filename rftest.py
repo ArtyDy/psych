@@ -1,5 +1,5 @@
 #%%
-sub='sub-02PC'
+sub='sub-test'
 
 from logging import shutdown
 import psychopy

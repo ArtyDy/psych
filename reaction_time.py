@@ -1,5 +1,5 @@
 #%%
-sub='sub-02PC'
+sub='sub-test'
 from turtle import Screen, pos
 import psychopy
 from psychopy import visual, core, event

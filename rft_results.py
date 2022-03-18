@@ -6,7 +6,7 @@ import numpy as np
 
 sub='sub-02PC'
 
-datapath= sub + '/' + 'results_RFT_' + sub+'_.mat'
+datapath='E:/Manip/Psych/psych/'+sub+'/' + 'results_RFT_' + sub+'_.mat'
 mat=scipy.io.loadmat(datapath)
 
 # listeligne=[-7, -4, -2, -1, 0, 1, 2, 4, 7,-7, -4, -2, -1, 0, 1, 2, 4, 7]
@@ -63,7 +63,7 @@ plt.plot([data2[0][k] for k in data2[0].keys()])
 #%% Faire un excel de Right Left
 import csv
 
-name = 'psych_RFT_COTE_'+ sub + '.csv'
+name = 'E:/Manip/Psych/psych/psych_RFT_COTE_'+ sub + '.csv'
 nbcondition=0
 nbessai=0
 

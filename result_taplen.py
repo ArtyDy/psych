@@ -4,7 +4,7 @@ import scipy.io
 
 
 sub='sub-02PC'
-datapath= sub + '/' + 'results_timerep_' + sub+'_taplen'+'.mat'
+datapath='E:/Manip/Psych/psych/'+sub + '/' + 'results_timerep_' + sub+'_taplen'+'.mat'
 mat=scipy.io.loadmat(datapath)
 
 conds=['600', '1200', '1000', '800', '800', '1200', '1200', '600', '800',
@@ -34,7 +34,7 @@ for cond, j in zip (conds, range (len(conds))) :
 # %% Excel
 import csv
 
-name = 'results_taplen_'+ sub + '.csv'
+name = 'E:/Manip/Psych/psych/sub-02PC/results_taplen_'+ sub + '.csv'
 nbparcond=10
 
 with open(name, 'w', newline ='') as file2:

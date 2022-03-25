@@ -3,7 +3,7 @@ import scipy.io
 import numpy as np
 sub='sub-test'
 
-datapath= sub + 'results_reactiontask'+'.mat'
+datapath= sub + '_results_RFT'+'.mat'
 conds=['H0.2', 'H0.5', 'H0.8','B0.2', 'B0.5', 'B0.8','G0.2', 'G0.5', 'G0.8','D0.2', 'D0.5', 'D0.8']
 data=dict()
 for k in conds:

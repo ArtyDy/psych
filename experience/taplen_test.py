@@ -10,8 +10,15 @@ from psychopy.hardware import keyboard
 
 
 #%% tap length
-#                                                                                                                                                          # %%
-sub='sub-02PC'
+#    
+from turtle import pos
+import psychopy
+from psychopy import visual, core, event
+from scipy.io import savemat
+import random
+from pathlib import Path
+from psychopy.hardware import keyboard                                                                                                                                                      # %%
+sub='sub-test'
 
 kb=keyboard.Keyboard()
 conds=['600', '1200', '1000', '800', '800', '1200', '1200', '600', '800',
@@ -24,7 +31,7 @@ conds=['600', '1200', '1000', '800', '800', '1200', '1200', '600', '800',
        '1200', '1000', '600', '1000', '1600', '800', '1400', '1400',
        '600', '1600']
 # conds=['400', '600', '800', '1000', '1200', '1400', '1600']
-# conds=['400', '600', '800', '1000']
+conds=['400', '600', '800', '1000']
 win = psychopy.visual.Window(
     size=[400, 400],
     units="pix",
@@ -198,12 +205,12 @@ for cond in conds:
         if 'escape' in key:
             win.close()
             core.quit()
-filename='E:/Manip/Psych/psych/results_timerep_' + sub + '_taplen.mat'
+filename='C:/Users/mathi/OneDrive/Documents/GitHub/psych/experience/' + sub + '_taplen.mat'
 results=dict({sub:keys})
 
-savemat(filename, results)
+# savemat(filename, results)
 win.close()
-                                                                                                                                                                # %%
+                                                                                                                                                                          # %%
 #%%
 
 from scipy.io import loadmat

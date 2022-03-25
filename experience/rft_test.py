@@ -78,6 +78,7 @@ cnds_order=[40, 62, 20, 19, 39, 53, 20, 61,  4, 48,  9, 51, 49, 40, 29, 15, 12,
        31, 33, 58, 37, 24, 40, 56, 57, 20, 34, 25]
 # cnds_len=[0, 1]
 # cnds_order=shuffle(np.tile(range(18), 13))
+cnds_order=[40, 62, 20, 19]
 cnds_len=range(len(cnds_order))
 for k in cnds_len:
     if k==160 or k==320 or k==480:

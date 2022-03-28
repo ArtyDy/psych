@@ -3,7 +3,7 @@
 import scipy.io
 
 
-sub='sub-02PC'
+sub='sub-03CT'
 datapath='E:/Manip/Psych/psych/'+sub + '/' + 'results_timerep_' + sub+'_taplen'+'.mat'
 mat=scipy.io.loadmat(datapath)
 

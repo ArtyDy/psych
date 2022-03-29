@@ -10,7 +10,7 @@ from pathlib import Path
 import os
 
 kb=keyboard.Keyboard()
-sub='sub-test'
+sub='sub-07DB'
 # dir ="/" + sub
 # Path(dir).mkdir(parents=True, exist_ok=True)
 
@@ -55,8 +55,8 @@ listecondition=['GB', 'NGB', 'NGD', 'GD', 'NGB', 'NGH', 'NGH', 'GG', 'NGH', 'NGB
 listetemps=[0.2, 0.8, 0.5, 0.8, 0.2, 0.2, 0.2, 0.5, 0.8, 0.5, 0.5, 0.5, 0.5, 0.2, 0.8, 0.2, 0.5, 0.8, 0.8, 0.8, 0.8, 0.2, 0.2, 0.8, 0.5, 0.8, 0.2, 0.2, 0.2, 0.2, 0.8, 0.2, 0.8, 0.2, 0.2, 0.5, 0.8, 0.5, 0.8, 0.5, 0.2, 0.2, 0.5, 0.2, 0.2, 0.5, 0.5, 0.8, 0.5, 0.8, 0.5, 0.8, 0.5, 0.5, 0.5, 0.8, 0.2, 0.8, 0.8, 0.2, 0.2, 0.2, 0.2, 0.5, 0.8, 0.2, 0.2, 0.5, 0.5, 0.8, 0.2, 0.5, 0.8, 0.5, 0.2, 0.2, 0.5, 0.2, 0.8, 0.2, 0.2, 0.5, 0.8, 0.2, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.2, 0.2, 0.8, 0.8, 0.8, 0.5, 0.8, 0.5, 0.5, 0.5, 0.8, 0.5, 0.5, 0.2, 0.5, 0.8, 0.8, 0.5, 0.2, 0.2, 0.8, 0.8, 0.5, 0.8, 0.2, 0.8, 0.5, 0.8, 0.8, 0.2, 0.8, 0.2, 0.8, 0.2, 0.5, 0.8, 0.5, 0.5, 0.5, 0.5, 0.8, 0.5, 0.2, 0.2, 0.5, 0.2, 0.2, 0.5, 0.5, 0.5, 0.8, 0.2, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.2, 0.2, 0.8, 0.2, 0.2, 0.2, 0.2, 0.8, 0.8, 0.8, 0.2, 0.5, 0.2, 0.8, 0.2, 0.5, 0.5, 0.5, 0.8, 0.8]
 ####=>liste=['GB2', 'NGB8', 'NGD5', 'GD8', 'NGB2', 'NGH2', 'NGH2', 'GG5', 'NGH8', 'NGB5', 'NGH5', 'GB5', 'NGG5', 'GH2', 'GG8', 'NGD2', 'GD5', 'GG8', 'GH8', 'NGD8', 'GG8', 'GB2', 'NGD2', 'GD8', 'GB5', 'NGH8', 'NGG2', 'GH2', 'GH2', 'GB2', 'NGD8', 'NGG2', 'NGH8', 'GB2', 'NGG2', 'NGH5', 'GD8', 'GH5', 'NGG8', 'NGG5', 'GD2', 'GG2', 'NGH5', 'GG2', 'NGG2', 'NGD5', 'NGB5', 'NGD8', 'NGD5', 'NGH8', 'GH5', 'GD8', 'GD5', 'NGG5', 'GB5', 'GH8', 'NGB2', 'GG8', 'NGB8', 'GH2', 'GG2', 'GD2', 'GB2', 'NGH5', 'GB8', 'NGG2', 'NGB2', 'NGB5', 'NGH5', 'NGB8', 'GG2', 'GD5', 'NGH8', 'GB5', 'NGD2', 'NGD2', 'GG5', 'GG2', 'GB8', 'GD2', 'NGH2', 'GG5', 'GG8', 'GD2', 'NGG8', 'GH8', 'NGH8', 'GH8', 'GH8', 'GH8', 'GB2', 'NGD2', 'NGB8', 'NGH8', 'NGG8', 'NGG5', 'GD8', 'GH5', 'GD5', 'GG5', 'GB8', 'NGB5', 'NGD5', 'GH2', 'GG5', 'GH8', 'NGB8', 'NGG5', 'GH2', 'NGD2', 'NGG8', 'NGD8', 'NGD5', 'GD8', 'NGH2', 'GB8', 'GD5', 'NGG8', 'NGD8', 'GD2', 'NGB8', 'NGH2', 'NGD8', 'NGB2', 'NGG5', 'GG8', 'GB5', 'GG5', 'GH5', 'NGB5', 'NGB8', 'NGH5', 'NGB2', 'NGG2', 'NGD5', 'GH2', 'GD2', 'GB5', 'NGH5', 'NGB5', 'GB8', 'NGB2', 'GB5', 'NGG5', 'GH5', 'NGD5', 'NGB5', 'GD5', 'GG2', 'NGH2', 'NGG8', 'GD2', 'NGH2', 'GB2', 'NGD2', 'NGD8', 'GD8', 'GB8', 'NGB2', 'GH5', 'NGG2', 'GB8', 'GG2', 'GG5', 'GH5', 'GD5', 'GG8', 'NGG8']
 
-listecondition=['GG','NGG', 'GD', 'NGD']
-listetemps=[0.2, 1, 0.2, 1]
+# listecondition=['GG','NGG', 'GD', 'NGD']
+# listetemps=[0.2, 1, 0.2, 1]
 
 listespace=[]
 keyss=[]

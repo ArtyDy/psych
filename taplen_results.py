@@ -3,8 +3,8 @@
 import scipy.io
 
 
-sub='sub-03CT'
-datapath='E:/Manip/Psych/psych/'+sub + '/' + 'results_timerep_' + sub+'_taplen'+'.mat'
+sub='sub-07DB'
+datapath='E:/Manip/Psych/psych/results_timerep_' + sub+'_taplen'+'.mat'
 mat=scipy.io.loadmat(datapath)
 
 conds=['600', '1200', '1000', '800', '800', '1200', '1200', '600', '800',

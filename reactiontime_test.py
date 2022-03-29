@@ -1,5 +1,5 @@
 #%%
-sub='sub-03CT'
+sub='sub-07DB'
 from turtle import Screen, pos
 import psychopy
 from psychopy import visual, core, event
@@ -312,7 +312,7 @@ win.close()
 
 
 
-#%%
+ #%%
 # import random
 
 # listecondition=[]
@@ -916,3 +916,5 @@ win.close()
 # # # %%
 
 # # %%
+
+# %%

@@ -61,6 +61,7 @@ for cond in conds:
         win.flip()
         clock.reset()
         key=kb.waitKeys(keyList=['space', 'esc'])
+        # key=event.getKeys(keyList=['space', 'esc'])
         core.wait(3)
         if 'space'in key:
             

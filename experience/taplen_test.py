@@ -196,7 +196,7 @@ for cond in conds:
         # rect.draw()
         win.flip()
         clock.reset()
-        key=kb.waitKeys(keyList=['space', 'esc'])
+        key=kb.waitKeys(keyList=['space', 'esc'], waitRelease=True)
         core.wait(3)
 
         if 'space'in key:

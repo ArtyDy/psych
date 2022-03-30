@@ -6,7 +6,7 @@ import glob
 from ast import Break
 import os
 
-sub='sub-03CT'
+sub='sub-07DB'
 
 datapath= sub + '/'
 data=dict()

@@ -3,7 +3,7 @@
 import scipy.io
 
 
-sub='sub-03CT'
+sub='sub-07DB'
 datapath='C:/Users/mathi/OneDrive/Documents/GitHub/psych/experience/'+ 'results_timerep_' + sub+'_taplen'+'.mat'
 mat=scipy.io.loadmat(datapath)
 

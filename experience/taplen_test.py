@@ -18,7 +18,7 @@ from scipy.io import savemat
 import random
 from pathlib import Path
 from psychopy.hardware import keyboard                                                                                                                                                      # %%
-sub='sub-test'
+sub='sub-01CB'
 
 kb=keyboard.Keyboard()
 conds=['600', '1200', '1000', '800', '800', '1200', '1200', '600', '800',

@@ -11,7 +11,7 @@ from psychopy.hardware import keyboard
 
 #%% tap length
 #                                                                                                                                                          # %%
-sub='sub-26CR'
+sub='sub-88VP'
 
 kb=keyboard.Keyboard()
 conds=['600', '1200', '1000', '800', '800', '1200', '1200', '600', '800',

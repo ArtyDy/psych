@@ -3,7 +3,7 @@
 import scipy.io
 
 
-sub='sub-28AP'
+sub='sub-88VP'
 datapath='C:/Users/mathi/OneDrive/Documents/GitHub/psych/experience/'+ 'results_timerep_' + sub+'_taplen'+'.mat'
 mat=scipy.io.loadmat(datapath)
 
@@ -45,5 +45,7 @@ with open(name, 'w', newline ='') as file2:
         #writer.writerow(['Essai'+str(n),str(listeresult[n]),str(listeresult[n+nbparcond]),str(listeresult[n+nbparcond*2]),str(listeresult[n+nbparcond*3]),str(listeresult[n+nbparcond* 4]),str(listeresult[n+nbparcond*5])])
         writer.writerow(['Essai'+str(n),data['400'][[key for key in data['400'].keys()][n]],data['800'][[key for key in data['800'].keys()][n]],data['1000'][[key for key in data['1000'].keys()][n]],data['1200'][[key for key in data['1200'].keys()][n]],data['1400'][[key for key in data['1400'].keys()][n]],data['1600'][[key for key in data['1600'].keys()][n]] ])
 
+
+# %%
 
 # %%

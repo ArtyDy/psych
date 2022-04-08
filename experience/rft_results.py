@@ -4,7 +4,7 @@ import scipy.io
 import numpy as np
 
 
-sub='sub-26CR'
+sub='sub-11VP'
 
 datapath='C:/Users/mathi/OneDrive/Documents/GitHub/psych/experience/' + 'results_RFT_' + sub+'_.mat'
 mat=scipy.io.loadmat(datapath)

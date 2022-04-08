@@ -6,7 +6,7 @@ import glob
 from ast import Break
 import os
 
-sub='sub-28AP'
+sub='sub-88VP'
 
 datapath= sub + '/'
 data=dict()
@@ -14,7 +14,7 @@ datapos=dict()
 
 
 idx=[]
-mat=scipy.io.loadmat('C:/Users/mathi/OneDrive/Documents/GitHub/psych/experience/'+ 'results_gng_'+sub + '.mat')
+mat=scipy.io.loadmat('C:/Users/mathi/OneDrive/Documents/GitHub/psych/experience/'+ 'results_GNG_'+sub + '.mat')
 # for file in glob.glob(datapath + 'results_gng_' + sub +'.mat'):
 #     if os.path.basename(file)[-7]=='_':
 #                 idx.append(os.path.basename(file)[-6:-4])

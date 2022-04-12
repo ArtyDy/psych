@@ -11,7 +11,7 @@ from psychopy.hardware import keyboard
 
 #%% tap length
 #                                                                                                                                                          # %%
-sub='sub-61EV'
+sub='sub-62LL'
 
 kb=keyboard.Keyboard()
 conds=['600', '1200', '1000', '800', '800', '1200', '1200', '600', '800',
@@ -204,7 +204,7 @@ results=dict({sub:keys})
 
 savemat(filename, results)
 win.close()
-                                                                                                                                                                # %%
+                                                                                                                                                                 # %%
 #%%
 
 from scipy.io import loadmat
